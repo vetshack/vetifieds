@@ -1,8 +1,8 @@
 let user = require('./user'),
     auth = require('./auth'),
     mentor = require('./mentor'),
-    jobs = require('./jobs'),
-    discount = require('./discounts'),
+    job = require('./job'),
+    discount = require('./discount'),
     event = require('./event');
 
 module.exports = (() => {
@@ -10,7 +10,7 @@ module.exports = (() => {
     user,
     auth,
     mentor,
-    jobs,
+    job,
     discount,
     event
   ];
