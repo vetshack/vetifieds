@@ -52,7 +52,6 @@ module.exports = (function() {
       email: req.body.email,
       createdby: req.body.createdby,
       description: req.body.description
-      // members: [String]
     })
       .then(function (response) {
         console.log('post event success', response);
@@ -75,6 +74,14 @@ module.exports = (function() {
   });
 
   router.put('/:id', function(req, res) {
+
+    if (!authHelper.isAuthenticated()) return res.status(401).send('User unauthorized');
+
+    req.assert('User', 'User cannot be blank').notEmpty();
+    let errors = req.validationErrors();
+
+    if (errors) return res.status(400).send(errors);
+
     let groupid = req.params.id,
       updateMember = Q.nbind(Group.findByIdAndUpdate, Group);
 
