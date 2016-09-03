@@ -6,6 +6,12 @@ var db = mongoose.connection;
 
 mongoose.connect(dbURL);
 
+var UserSchema = mongoose.Schema({
+  name: String,
+  email: String,
+  password: String,
+  isVet: Boolean
+});
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {

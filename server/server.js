@@ -1,13 +1,13 @@
 var express = require('express'),
-bodyParser = require('body-parser'),
-cors = require('cors'),
-app = express(),
-logger = require('morgan'),
-dotenv = require('dotenv'),
-cookieParser = require('cookie-parser'),
-jwt = require('jsonwebtoken');
-db = require('./db'),
-app = express();
+    bodyParser = require('body-parser'),
+    cors = require('cors'),
+    app = express(),
+    logger = require('morgan'),
+    dotenv = require('dotenv'),
+    cookieParser = require('cookie-parser'),
+    jwt = require('jsonwebtoken');
+    db = require('./db'),
+    app = express();
 
 
 dotenv.load();
