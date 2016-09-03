@@ -5,7 +5,7 @@ let Q = require('q');
 
 module.exports = (function() {
   let controller = ControllerPrototype.create({
-    path: '/mentors'
+    path: '/api/mentors'
   });
   let router = controller.router;
 
