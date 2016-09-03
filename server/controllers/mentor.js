@@ -12,7 +12,7 @@ module.exports = (function() {
   router.get('/', function(req, res) {
     res.send("we hit /mentors");
   });
-  
+
   router.post('/', function(req, res) {
 
     if (!authHelper.isAuthenticated()) return res.status(401).send('User unauthorized');
