@@ -1,15 +1,15 @@
 let mongoose = require('mongoose');
 
-let EventSchema = mongoose.Schema({
-  eventname: String,
+let MeetupSchema = mongoose.Schema({
+  name: String,
   location: String,
-  poc: String,
   phone: String,
-  email: String,
+  createdby: String,
   time: Date,
   duration: Number,
   date: Date,
   description: String
+  members: [String]
 });
 
-module.exports = EventSchema;
+module.exports = MeetupSchema;
