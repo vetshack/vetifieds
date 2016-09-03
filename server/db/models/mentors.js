@@ -5,7 +5,7 @@ let MentorSchema = mongoose.Schema({
   fullname: String,
   username: String,
   imageUrl: String,
-  location: Number,
+  location: String,
   industry: String,
   unit: String,
   mos: String,
