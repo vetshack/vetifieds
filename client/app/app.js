@@ -5,6 +5,7 @@ import vetshack_shared from '../shared/shared.module';
 import vetshack_home from '../pages/vetshack.home/home.module';
 import vetshack_auth from '../pages/vetshack.auth/auth.module';
 import vetshack_mentors from '../pages/vetshack.mentors/mentors.module';
+import vetshack_mentorProfile from '../pages/vetshack.mentorProfile/mentorProfile.module';
 
 angular
   .module('vetshack', [
@@ -13,5 +14,6 @@ angular
     vetshack_shared.name,
     vetshack_home.name,
     vetshack_auth.name,
-    vetshack_mentors.name
+    vetshack_mentors.name,
+    vetshack_mentorProfile.name
   ]);
