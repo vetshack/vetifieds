@@ -5,7 +5,8 @@ let user = require('./user'),
     discount = require('./discount'),
     event = require('./event'),
     category = require('./category'),
-    image = require('./image');
+    image = require('./image'),
+    group = require('./group');
 
 module.exports = (() => {
   let controllers = [
@@ -16,7 +17,8 @@ module.exports = (() => {
     discount,
     event,
     category,
-    image
+    image,
+    group
   ];
 
   let router = {};
