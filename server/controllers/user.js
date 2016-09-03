@@ -1,13 +1,28 @@
-let ControllerPrototype = require('./controller.prototype');
+let ControllerPrototype = require('./controller.prototype'),
+    User = require('../db/models/users'),
+    Q = require('q');
+
 
 module.exports = (function() {
   let controller = ControllerPrototype.create({
-    path: '/users'
+    path: '/api/users'
   });
   let router = controller.router;
   
-  router.get('/', function(req, res) {
-    res.send("we hit /users");
+  router.get('/:email', function(req, res) {
+    let email = req.params.email,
+        link = Q.nbind(User.find, User);
+
+    link({email: email})
+      .then(function(data) {
+        console.log("data found", data);
+        res.json(data);
+      })
+      .fail(function (error) {
+        console.log("failed, getting user", error)
+        next(error);
+      });
+
   });
 
   return controller;
