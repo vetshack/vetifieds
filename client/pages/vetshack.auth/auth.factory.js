@@ -16,23 +16,23 @@ const Auth = function($http, $q) {
     });
   };
 
-  const signup = (email, fullName, username, password, isVet) => {
+  const signup = (email, fullname, username, password, isVet) => {
     return $http({
       method: 'POST',
       url: 'api/auth/signup',
       data: {
         email: email,
-        fullName: fullName,
+        fullname: fullname,
         username: username,
         password: password,
         isVet: isVet
       }
     })
     .then((response) => {
-      console.log('Response from attempted login: ',response);
+      return response;
     })
     .catch((err) => {
-      console.log('Error from attempted login: ', err);
+      console.log('Error from attempted signup: ', err);
     });
   };
 
@@ -47,20 +47,3 @@ const Auth = function($http, $q) {
 Auth.$inject = ['$http', '$q'];
 
 export default Auth;
-
-
-// return $http({
-//  method: 'METHOD',
-//  url: 'URL'
-// })
-//  .then(NAMEComplete)
-//  .catch(NAMEFailed);
-
-// function NAMEComplete (response) {
-//  return response;
-// }
-
-// function NAMEFailed (error) {
-//  console.error('Failed for links: ', error);
-//  return $q.reject(error);
-// }

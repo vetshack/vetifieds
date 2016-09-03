@@ -6,13 +6,15 @@ const AuthController = function(Auth, $state, $cookies) {
     console.log('password: ', password);
     Auth.login(username, password)
     .then((response) => {
-      console.log(response);
-      $cookies.put('jwt', response.token);
-    })
+      $cookies.put('jwt', response.data.token);
+    });
   };
 
   vm.signup = function(email, fullName, username, password, isVet) {
-    Auth.signup(email, fullName, username, password, isVet);
+    Auth.signup(email, fullName, username, password, isVet)
+    .then((response) => {
+      $cookies.put('jwt', response.data.token);
+    })
   };
 
   vm.state = $state.current.name;
