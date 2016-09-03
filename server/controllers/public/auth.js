@@ -1,11 +1,11 @@
-var ControllerPrototype = require('./controller.prototype');
+var ControllerPrototype = require('../controller.prototype');
 var authHelper = require('../helpers/authHelper');
 var User = require('../db/models/users');
 var Q = require('q');
 
 module.exports = (function() {
   var controller = ControllerPrototype.create({
-    path: '/'
+    path: '/api/auth'
   });
   var router = controller.router;
   
@@ -47,10 +47,6 @@ module.exports = (function() {
         console.log("failed, line in /signin")
         next(error);
       });
-
-    //check user exists
-    //if does, compare password
-    // res.send("we hit /login");
   });
 
   router.post('/signup', function(req, res) {
