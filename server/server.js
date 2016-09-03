@@ -8,7 +8,8 @@ cookieParser = require('cookie-parser'),
 jwt = require('jsonwebtoken'),
 db = require('./db'),
 morgan = require('morgan'),
-moment = require('moment');
+moment = require('moment'),
+router = require('./router');
 
 dotenv.load();
 
@@ -22,6 +23,8 @@ app.set("port", process.env.PORT || 1337);
 app.use(logger('dev'));
 
 app.use(express.static('build'));
+
+router(app, require('./controllers/controllers')).init();
 
 app.listen(app.get('port'), function() {
   console.log('[' + moment().format('hh:mm:ss') + ']' + ' Express Server listening on port', app.get('port'));
