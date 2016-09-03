@@ -1,7 +1,7 @@
 let mongoose = require('mongoose');
 
 let DiscountSchema = mongoose.Schema({
-  location: Number,
+  location: String,
   type: String,
   description: String,
   amount: Number,

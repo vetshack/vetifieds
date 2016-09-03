@@ -9,7 +9,9 @@ let express = require('express'),
   db = require('./db/db'),
   morgan = require('morgan'),
   moment = require('moment'),
-  router = require('./router')
+  router = require('./router'),
+  expressValidator = require('express-validator');
+
 
 dotenv.load();
 
@@ -19,6 +21,7 @@ app.use(cors());
 app.set("env", process.env.NODE_ENV || "development");
 app.set("host", process.env.HOST || "0.0.0.0");
 app.set("port", process.env.PORT || 1337);
+app.use(expressValidator());
 
 app.use(logger('dev'));
 
