@@ -13,7 +13,7 @@ var src = {
     // material: 'node_modules/angular-material/angular-material.min.css'
   },
 	scripts: {
-		all: ['client/app/*.js','client/app/*.*.js','client/pages/*/*.js'],
+		all: ['client/app/*.js','client/app/*.*.js','client/pages/*/*.js', 'client/shared/components/*.*.*.js', 'client/shared/*.*.js'],
 		app: 'client/app/app.js',
     server: 'server/server.js'
 	}
