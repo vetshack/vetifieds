@@ -1,6 +1,6 @@
 const Auth = function($http, $q) {
-  let service = {
-
+  const service = {
+    
   };
 
   return service;
