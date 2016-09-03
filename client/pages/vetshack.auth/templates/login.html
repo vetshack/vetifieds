@@ -1,5 +1,8 @@
 <div layout="column" layout-align="center center" layout-padding>
   <md-content>
+    <a ui-sref="signup">
+      Need an account?
+    </a>
     <form name="vm.userForm" ng-submit="vm.userForm && signin({username: vm.username, password: vm.password})" novalidate>
       <md-input-container>
         <label>Username or Email</label>

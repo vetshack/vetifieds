@@ -1,0 +1,53 @@
+<div layout="column" layout-align="center center" layout-padding>
+  <md-content>
+    <a ui-sref="login">
+      Have an account?
+    </a>
+
+    <form name="vm.signinForm" ng-submit="vm.signinForm && signup({fullName: vm.fullName, email: vm.email, username: vm.username, password: vm.password, isVet: vm.isVet})" novalidate>
+
+      <md-input-container>
+        <label>Full Name</label>
+        <input type="text" name="fullName" ng-model="vm.fullName">
+        <div ng-messages="vm.signinForm.fullName.$error" role="alert">
+          <div ng-message="required">You must enter your name.</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container>
+        <label>Email</label>
+        <input type="email" name="email" ng-model="vm.email">
+        <div ng-messages="vm.signinForm.email.$error" role="alert">
+          <div ng-message="required">You must enter an email.</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container>
+        <label>Username</label>
+        <input type="text" name="username" ng-model="vm.username">
+        <div ng-messages="vm.signinForm.username.$error" role="alert">
+          <div ng-message="required">You must enter a username.</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container>
+        <label>Password</label>
+        <input type="password" name="password" ng-model="vm.password">
+        <div ng-messages="vm.signinForm.password.$error" role="alert">
+          <div ng-message="required">You must enter a password.</div>
+        </div>
+      </md-input-container>
+
+      <div flex-gt-sm="50">
+        <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="vm.isVet" class="md-primary">
+          Are you a veteran?
+        </md-checkbox>
+      </div>
+
+      <md-input-container>
+        <md-button type="submit" class="md-raised" ng-true-value="true" ng-false-value="false">Sign Up</md-button>
+      </md-input-container>
+    </form>
+  </md-content>
+</div>
+

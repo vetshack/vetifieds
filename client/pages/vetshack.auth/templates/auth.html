@@ -1,1 +1,2 @@
-<vetshack-login signin="vm.signin(username, password)"></vetshack-login>
+<vetshack-login signin="vm.signin(username, password)" location="vm.state" ng-show="vm.state === 'login'"></vetshack-login>
+<vetshack-signup signup="vm.signup(email, fullName, username, password, isVet)" ng-show="vm.state === 'signup'"></vetshack-signup>
