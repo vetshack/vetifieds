@@ -1,4 +1,6 @@
-var user = require('./user');
+'use strict'
+
+let user = require('./user');
 
 module.exports = (() => {
   let controllers = [
