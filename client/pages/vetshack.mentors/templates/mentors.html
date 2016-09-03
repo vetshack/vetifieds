@@ -2,11 +2,18 @@
 
 <vetshack-searchbar location="vm.location" type="vm.type"></vetshack-searchbar>
 
-<div layout="row" layout-padding layout-wrap layout-margin ng-cloak layout-align="space-around" >
-  <div class="padded" md-whiteframe="{{height}}" flex="100" flex-gt-sm="50" layout="column" layout-align="center left"
-      ng-init="height = 3" ng-mouseenter="height = 6" ng-mouseleave="height = 3">
-    <h3><span ng-non-bindable>taco</span></h3>
-    <span>Type</span>
-    <span>Description</span>
-  </div>
+<div>
+  <ul ng-init="mentors = getMentors()">
+    <li ng-repeat="mentor in mentors">
+      <div layout="row" layout-padding layout-wrap layout-margin ng-cloak layout-align="space-around">
+      <div class="padded" md-whiteframe="1" flex="100" flex-gt-sm="50" layout="column" layout-align="center left" ng-click="vm.onClickMentor()">
+        <h3><span>{{mentor.name}}</span></h3>
+        <span>{{mentor.type}}</span>
+        <span>{{mentor.description}}</span>
+      </div>
+    </div>
+    </li>
+  </ul>
 </div>
+
+
