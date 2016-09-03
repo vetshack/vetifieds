@@ -3,6 +3,7 @@ let mongoose = require('mongoose');
 let MentorSchema = mongoose.Schema({
   type: String,
   fullname: String,
+  username: String,
   imageUrl: String,
   location: Number,
   industry: String,
@@ -12,4 +13,4 @@ let MentorSchema = mongoose.Schema({
   email: String
 });
 
-module.exports = MentorSchema;
+module.exports = mongoose.model('Mentor', MentorSchema);

@@ -1,4 +1,6 @@
-let mongoose = require('mongoose');
+let mongoose = require('mongoose'),
+  moment = require('moment');
+
 require('dotenv').config();
 
 let dbURL = process.env.hosted === false 
@@ -11,5 +13,5 @@ mongoose.connect(dbURL);
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('connected to database!');
+  console.log('[' + moment().format('hh:mm:ss') + ']' + ' Database connection established');
 });
