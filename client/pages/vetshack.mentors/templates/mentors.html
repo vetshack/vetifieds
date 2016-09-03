@@ -2,12 +2,11 @@
 
 <vetshack-searchbar location="vm.location" type="vm.type"></vetshack-searchbar>
 
-<div id="Mentors-Parent">
-  <div class="mentors-list">
-    <ul ng-init="mentors = vm.getMentors()">
-      <li ng-repeat="mentor in mentors" style="list-style: none">
-        <div layout="row" layout-padding layout-wrap layout-margin ng-cloak layout-align="space-around">
-          <div class="padded" md-whiteframe="1" flex="100" flex-gt-sm="50" layout="column" layout-align="center left" ng-click="vm.onClickMentor(mentor.id)">
+<div id="List-Parent">
+  <div id="List-Mentors" ng-init="mentors = vm.getMentors()">
+    <ul class="mentors" ng-repeat="mentor in mentors">
+      <li class="list-tile-parent" style="list-style: none">
+        <div class="list-tile">
             <h3><span>{{mentor.fullname}}</span></h3>
             <span>{{mentor.type}}</span>
             <span>{{mentor.industry}}</span>
