@@ -1,17 +1,17 @@
 let ControllerPrototype = require('./controller.prototype'),
-    Job = require('../db/models/jobs'),
+    Discount = require('../db/models/discounts'),
     Q = require('q');
 
 
 module.exports = (function() {
   let controller = ControllerPrototype.create({
-    path: '/api/jobs'
+    path: '/api/discount'
   });
   let router = controller.router;
   
   router.get('/:location', function(req, res) {
     let location = req.params.location,
-        link = Q.nbind(Job.find, Job);
+        link = Q.nbind(Discount.find, Discount);
 
     link({location: location})
       .then(function(data) {
@@ -19,7 +19,7 @@ module.exports = (function() {
         res.json(data);
       })
       .fail(function (error) {
-        console.log("failed, getting jobs", error)
+        console.log("failed, getting discount", error)
         next(error);
       });
 
@@ -37,26 +37,20 @@ module.exports = (function() {
 
     if (errors) return res.status(400).send(errors);
 
-    let postJob = Q.nbind(Job.create, Job);
-    postJob({
-      jobname: req.body.jobname,
-      industry: req.body.industry,
-      poc: req.body.poc,
-      description: req.body.description,
-      phone: req.body.phone,
-      email: req.body.email,
-      website: req.body.website,
-      mos: req.body.mos,
-      skillsreq: req.body.skillsreq,
+    let postDiscount = Q.nbind(Discount.create, Discount);
+    postDiscount({
       location: req.body.location,
-      zipcode: req.body.zipcode
+      type: req.body.type,
+      description: req.body.description,
+      amount: req.body.amount,
+      who: req.body.who
     })
       .then(function () {
-        console.log('job created successful');
+        console.log('discount created successful');
         res.json({success: true});
       })
       .fail(function (error) {
-        console.log("failed, posting job")
+        console.log("failed, posting discount")
         next(error);
       });
   });
