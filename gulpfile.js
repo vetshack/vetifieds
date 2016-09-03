@@ -76,7 +76,7 @@ gulp.task('scripts', ['jshint'], function() {
 
 });
 
-gulp.task('serve', ['build', 'watch', 'css'], function() {
+gulp.task('server', ['build', 'watch'], function() {
   nodemon({
     script: src.scripts.server
   })
@@ -89,4 +89,4 @@ gulp.task('watch', function() {
 })
 
 gulp.task('build', ['scripts', 'html', 'css']);
-gulp.task('default', ['serve']);
+gulp.task('default', ['server']);
