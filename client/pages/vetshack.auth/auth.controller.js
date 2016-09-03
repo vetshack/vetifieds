@@ -1,19 +1,23 @@
-const AuthController = function(Auth, $state) {
+const AuthController = function(Auth, $state, $cookies) {
   let vm = this;
   
   vm.signin = function(username, password) {
     console.log('username: ', username);
     console.log('password: ', password);
-    console.log($state.current.name);
+    Auth.login(username, password)
+    .then((response) => {
+      console.log(response);
+      $cookies.put('jwt', response.token);
+    })
   };
 
   vm.signup = function(email, fullName, username, password, isVet) {
-    console.log($state.current.name);
+    Auth.signup(email, fullName, username, password, isVet);
   };
 
   vm.state = $state.current.name;
 };
 
-AuthController.$inject = ['Auth', '$state'];
+AuthController.$inject = ['Auth', '$state', '$cookies'];
 
 export default AuthController;
