@@ -1,3 +1,5 @@
+'use strict'
+
 let mongoose = require('mongoose');
 require('dotenv').config();
 
@@ -8,13 +10,6 @@ let dbURL = process.env.hosted === false
 let db = mongoose.connection;
 
 mongoose.connect(dbURL);
-
-let UserSchema = mongoose.Schema({
-  name: String,
-  email: String,
-  password: String,
-  isVet: Boolean
-});
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
