@@ -12,7 +12,8 @@ let UserSchema = mongoose.Schema({
   password: String,
   salt: String,
   location: String,
-  isVet: Boolean
+  isVet: Boolean,
+  isSupport: Boolean
 });
 
 UserSchema.methods.comparePasswords = function (attempt) {
