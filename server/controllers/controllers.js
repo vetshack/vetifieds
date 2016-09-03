@@ -1,12 +1,14 @@
 let user = require('./user'),
     auth = require('./auth'),
-    mentor = require('./mentor');
+    mentor = require('./mentor'),
+    jobs = require('./jobs')
 
 module.exports = (() => {
   let controllers = [
     user,
     auth,
-    mentor
+    mentor,
+    jobs
   ];
 
   let router = {};

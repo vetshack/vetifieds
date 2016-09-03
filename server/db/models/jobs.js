@@ -13,4 +13,4 @@ let JobSchema = mongoose.Schema({
   zipcode: Number
 });
 
-module.exports = JobSchema;
+module.exports = mongoose.model('Job', JobSchema);
