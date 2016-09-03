@@ -10,7 +10,13 @@ function config($stateProvider, $urlRouterProvider, $httpProvider) {
       auth: false,
       templateUrl: '../pages/vetshack.home/templates/home.html',
       controller: 'HomeController as vm'
-    });
+    })
+    .state('login', {
+      url: '/login',
+      auth: false,
+      templateUrl: '../pages/vetshack.auth/templates/auth.html',
+      controller: 'AuthController as vm'
+    })
   $urlRouterProvider
     .otherwise('/home');
 }
