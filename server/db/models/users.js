@@ -11,6 +11,7 @@ let UserSchema = mongoose.Schema({
   email: String,
   password: String,
   salt: String,
+  location: String,
   isVet: Boolean
 });
 

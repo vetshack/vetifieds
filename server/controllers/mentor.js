@@ -10,7 +10,24 @@ module.exports = (function() {
   let router = controller.router;
 
   router.get('/', function(req, res) {
-    res.send("we hit /mentors");
+    res.send('We hit /mentor');
+  })
+
+  router.get('/:location', function(req, res) {
+
+    if (!authHelper.isAuthenticated()) return res.status(401).send('User unauthorized');
+
+    let getMentors = Q.nbind(Mentor.find, Mentor);
+    getMentors({
+      location: req.params.location
+    })
+      .then(function(response) {
+        res.json({ data: response });
+      })
+      .fail(function (error) {
+        console.log("failed, line 23 in /mentor")
+        next(error);
+      });
   });
 
   router.post('/', function(req, res) {

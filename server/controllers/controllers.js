@@ -5,7 +5,8 @@ let user = require('./user'),
 module.exports = (() => {
   let controllers = [
     user,
-    auth
+    auth,
+    mentor
   ];
 
   let router = {};
