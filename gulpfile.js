@@ -8,6 +8,10 @@ var gulp = require('gulp'),
 
 var src = {
 	html: 'client/**/*.html',
+  css: {
+    all: ['client/pages/**/css/*.css', 'node_modules/*/*.min.css']
+    // material: 'node_modules/angular-material/angular-material.min.css'
+  },
 	scripts: {
 		all: ['client/app/*.js','client/app/*.*.js','client/pages/*/*.js'],
 		app: 'client/app/app.js',
@@ -20,7 +24,10 @@ var out = {
 	scripts: {
 		file: 'app.min.js',
 		folder: build + 'scripts/'
-	}
+	},
+  css: {
+    folder: build + 'css/'
+  }
 }
 
 gulp.task('html', function() {
@@ -28,6 +35,12 @@ gulp.task('html', function() {
 		.pipe(gulp.dest(build))
 		.pipe(plugins.connect.reload());
 });
+
+gulp.task('css', function() {
+  return gulp.src(src.css.all)
+    .pipe(gulp.dest(out.css.folder))
+    .pipe(plugins.connect.reload());
+})
 
 gulp.task('jshint', function() {
 	return gulp.src(src.scripts.all)
@@ -63,7 +76,7 @@ gulp.task('scripts', ['jshint'], function() {
 
 });
 
-gulp.task('serve', ['build', 'watch'], function() {
+gulp.task('serve', ['build', 'watch', 'css'], function() {
   nodemon({
     script: src.scripts.server
   })
@@ -72,7 +85,8 @@ gulp.task('serve', ['build', 'watch'], function() {
 gulp.task('watch', function() {
 	gulp.watch(src.html, ['html']);
 	gulp.watch(src.scripts.all, ['scripts']);
+  gulp.watch(src.css.all, ['css']);
 })
 
-gulp.task('build', ['scripts', 'html']);
+gulp.task('build', ['scripts', 'html', 'css']);
 gulp.task('default', ['serve']);
