@@ -1,0 +1,43 @@
+{
+  "name": "vetshack",
+  "version": "1.0.0",
+  "description": "Vet Hackathon",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vetshack/vetshack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vetshack/vetshack/issues"
+  },
+  "homepage": "https://github.com/vetshack/vetshack#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.0",
+    "express": "^4.14.0",
+    "request": "^2.74.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.14.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
+    "jshint": "^2.9.3",
+    "jshint-stylish": "^2.2.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
