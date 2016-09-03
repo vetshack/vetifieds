@@ -10,6 +10,7 @@ let UserSchema = mongoose.Schema({
   username: String,
   email: String,
   password: String,
+  salt: String,
   isVet: Boolean
 });
 
@@ -28,7 +29,7 @@ UserSchema.methods.comparePasswords = function (attempt) {
 };
 
 UserSchema.pre('save', function (next) {
-
+  console.log("pre save")
   var user = this;
 
   bcrypt.genSalt(saltRounds, function(err, salt) {

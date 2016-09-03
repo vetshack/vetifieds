@@ -4,6 +4,7 @@ var moment = require('moment');
 
 module.exports = (function() {
   function generateToken(user) {
+    console.log("inside generateToken", user)
     var payload = {
       iss: 'my.domain.com',
       sub: user.id,
