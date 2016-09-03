@@ -1,6 +1,6 @@
 var ControllerPrototype = require('../controller.prototype');
-var authHelper = require('../helpers/authHelper');
-var User = require('../db/models/users');
+var authHelper = require('../../helpers/authHelper');
+var User = require('../../db/models/users');
 var Q = require('q');
 
 module.exports = (function() {
