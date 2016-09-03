@@ -1,6 +1,5 @@
 
 let express = require('express'),
-<<<<<<< d80da93c3228c3ca135080561e912b9e166a67ba
   bodyParser = require('body-parser'),
   cors = require('cors'),
   app = express(),
