@@ -6,10 +6,9 @@ let EventSchema = mongoose.Schema({
   poc: String,
   phone: String,
   email: String,
-  time: Date,
   duration: Number,
   date: Date,
   description: String
 });
 
-module.exports = EventSchema;
+module.exports = mongoose.model('Event', EventSchema);
