@@ -5,7 +5,7 @@ let ControllerPrototype = require('./controller.prototype'),
 
 module.exports = (function() {
   let controller = ControllerPrototype.create({
-    path: 'api/jobs'
+    path: '/api/jobs'
   });
   let router = controller.router;
   
@@ -23,10 +23,6 @@ module.exports = (function() {
         next(error);
       });
 
-
-
-
-    res.send("we hit /jobs/:location");
   });
 
   router.post('/', function(req, res) {
