@@ -6,10 +6,10 @@ logger = require('morgan'),
 dotenv = require('dotenv'),
 cookieParser = require('cookie-parser'),
 jwt = require('jsonwebtoken'),
-db = require('./db'),
+db = require('./db/db'),
 morgan = require('morgan'),
 moment = require('moment'),
-router = require('./router');
+router = require('./router')
 
 dotenv.load();
 
