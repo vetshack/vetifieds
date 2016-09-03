@@ -1,0 +1,25 @@
+<div layout="column" layout-align="center center" layout-padding>
+  <md-content>
+    <form name="vm.userForm" ng-submit="vm.userForm && signin({username: vm.username, password: vm.password})" novalidate>
+      <md-input-container>
+        <label>Username or Email</label>
+        <input type="text" name="username" ng-model="vm.username">
+        <div ng-messages="vm.userForm.username.$error" role="alert">
+          <div ng-message="required">You must enter a username or email.</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container>
+        <label>Password</label>
+        <input type="password" name="password" ng-model="vm.password">
+        <div ng-messages="vm.userForm.password.$error" role="alert">
+          <div ng-message="required">You must enter a password.</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container>
+        <md-button type="submit" class="md-raised">Signin</md-button>
+      </md-input-container>
+    </form>
+  </md-content>
+</div>
