@@ -4,7 +4,7 @@
   "description": "Vet Hackathon",
   "main": "index.js",
   "scripts": {
-    "start": "gulp start"
+    "start": "gulp serve"
   },
   "repository": {
     "type": "git",
