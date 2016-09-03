@@ -1,7 +1,8 @@
 let mongoose = require('mongoose');
 
 let UserSchema = mongoose.Schema({
-  name: String,
+  fullname: String,
+  username: String,
   email: String,
   password: String,
   isVet: Boolean
