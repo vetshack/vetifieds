@@ -8,7 +8,9 @@ let JobSchema = mongoose.Schema({
   phone: String,
   email: String,
   website: String,
-  skillsreq: [String]
+  skillsreq: [String],
+  location: String, //city & state
+  zipcode: Number
 });
 
 module.exports = JobSchema;
