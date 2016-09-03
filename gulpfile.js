@@ -53,6 +53,7 @@ gulp.task('scripts', ['jshint'], function() {
 		.pipe(plugins.sourcemaps.init({
 			loadMaps: true
 		}))
+    .pipe(plugins.ngAnnotate())
 		.pipe(plugins.uglify())
 		.pipe(plugins.sourcemaps.write('./', {
 			includeContent: true
