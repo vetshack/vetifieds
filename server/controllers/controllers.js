@@ -1,5 +1,6 @@
 let user = require('./user'),
-    auth = require('./auth');
+    auth = require('./auth'),
+    mentor = require('./mentor');
 
 module.exports = (() => {
   let controllers = [
