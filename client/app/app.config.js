@@ -1,6 +1,6 @@
 const vethacks_config = angular.module('vetshack.config', [])
   .config(config);
-  
+
 /* @ngInject */
 
 function config($stateProvider, $urlRouterProvider, $httpProvider) {
@@ -16,7 +16,7 @@ function config($stateProvider, $urlRouterProvider, $httpProvider) {
       auth: false,
       templateUrl: '../pages/vetshack.auth/templates/auth.html',
       controller: 'AuthController as vm'
-    })
+    });
   $urlRouterProvider
     .otherwise('/home');
 }
