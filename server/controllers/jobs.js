@@ -44,7 +44,7 @@ module.exports = (function() {
       poc: req.body.poc,
       description: req.body.description,
       phone: req.body.phone,
-      industry: req.body.industry,
+      email: req.body.email,
       website: req.body.website,
       mos: req.body.mos,
       skillsreq: req.body.skillsreq,
