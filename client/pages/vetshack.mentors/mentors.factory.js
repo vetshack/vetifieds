@@ -11,24 +11,28 @@ const Mentors = function($http, $q) {
       .then((resp, err) => {
         if(err) {
           console.log(err);
+          return err;
         } else {
           return resp.data;
         }
       })
       .catch((err) => {
         console.log("Error in fetchLocalMentors in mentors service");
-      })
+        return err;
+      });
     },
     test: () => {
       const mentors = [{
-        name:'Ryan',
+        id: 1,
+        fullname:'Ryan',
         type: 'Vet',
-        Description: 'Taco'
+        industry: 'Taco'
       },
       {
-        name:'Ryan',
+        id: 2,
+        fullname:'Ryan',
         type: 'Vet',
-        Description: 'Taco'
+        industry: 'Taco'
       }
       ];
       return mentors;

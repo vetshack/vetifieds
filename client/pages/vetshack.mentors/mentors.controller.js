@@ -3,10 +3,13 @@ const MentorsController = function(Mentors, $state) {
 
   vm.getMentors = Mentors.test;
 
-  vm.onClickMentor = (e) => {
-    console.log("Event: ", e);
+  vm.onClickMentor = (mentorId) => {
+    console.log("Mentors ID: ", mentorId);
+    // once routing is complete pass in mentorId
+    // i.e.: /mentores/:mentorId
     $state.go('home');
   };
+
 };
 
 MentorsController.$inject = ['Mentors', '$state'];
