@@ -1,14 +1,12 @@
 let mongoose = require('mongoose');
 
 let GroupSchema = mongoose.Schema({
-  name: String,
+  groupname: String,
   location: String,
   phone: String,
+  email: String,
   createdby: String,
-  time: Date,
-  duration: Number,
-  date: Date,
-  description: String
+  description: String,
   members: [String]
 });
 
