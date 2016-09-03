@@ -1,7 +1,7 @@
-let ControllerPrototype = require('./controller.prototype.js');
-let authHelper = require('../helpers/authHelper');
-let Event = require('../db/models/events');
-let Q = require('q');
+let ControllerPrototype = require('./controller.prototype.js'),
+  authHelper = require('../helpers/authHelper'),
+  Event = require('../db/models/events'),
+  Q = require('q');
 
 module.exports = (function() {
   let controller = ControllerPrototype.create({
