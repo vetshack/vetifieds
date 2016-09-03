@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 
-let MeetupSchema = mongoose.Schema({
+let GroupSchema = mongoose.Schema({
   name: String,
   location: String,
   phone: String,
@@ -12,4 +12,4 @@ let MeetupSchema = mongoose.Schema({
   members: [String]
 });
 
-module.exports = MeetupSchema;
+module.exports = mongoose.model('Group', GroupSchema);
