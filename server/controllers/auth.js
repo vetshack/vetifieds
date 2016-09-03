@@ -10,10 +10,7 @@ module.exports = (function() {
   var router = controller.router;
   
   router.post('/login', function(req, res) {
-    req.assert('email', 'Email is not valid').isEmail();
-    req.assert('email', 'Email cannot be blank').notEmpty();
     req.assert('password', 'Password cannot be blank').notEmpty();
-    req.sanitize('email').normalizeEmail({ remove_dots: false });
 
     var errors = req.validationErrors();
 
@@ -26,7 +23,13 @@ module.exports = (function() {
     }
       
     var findUser = Q.nbind(User.findOne, User);
-    findUser({username: reqUser.username})
+    findUser({
+      $or: [{
+          username: reqUser.username
+      }, {
+          email: reqUser.email
+      }]
+    })
       .then(function (user) {
         if (!user) {
           next(new Error('User does not exist'));
@@ -64,9 +67,12 @@ module.exports = (function() {
     if (errors) return res.status(400).send(errors);
 
     let reqUser = {
+      fullname: req.body.fullname,
       username: req.body.username,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      location: req.body.location,
+      isVet: req.body.isVet
     }, 
       create, 
       newUser,
@@ -74,7 +80,13 @@ module.exports = (function() {
 
 
     // check to see if user already exists
-    findOne({username: reqUser.username})
+    findOne({
+      $or: [{
+          username: reqUser.username
+      }, {
+          email: reqUser.email
+      }]
+    })
       .then(function(user) {
         console.log("line 89", user)
         if (user) {
