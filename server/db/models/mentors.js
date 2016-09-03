@@ -13,4 +13,4 @@ let MentorSchema = mongoose.Schema({
   email: String
 });
 
-module.exports = MentorSchema;
+module.exports = mongoose.model('Mentor', MentorSchema);

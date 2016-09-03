@@ -1,8 +1,10 @@
 let user = require('./user');
+let mentor = require('./mentor');
 
 module.exports = (() => {
   let controllers = [
-    user
+    user,
+    mentor
   ];
 
   let router = {};
