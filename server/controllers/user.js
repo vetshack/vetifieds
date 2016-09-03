@@ -1,4 +1,4 @@
-let ControllerPrototype = require('../controller.prototype');
+let ControllerPrototype = require('./controller.prototype');
 
 module.exports = (function() {
   let controller = ControllerPrototype.create({

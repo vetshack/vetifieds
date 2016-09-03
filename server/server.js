@@ -27,8 +27,7 @@ app.use(logger('dev'));
 
 app.use(express.static('build'));
 
-router(app, require('./controllers/private/controllers')).init();
-router(app, require('./controllers/public/controllers')).init();
+router(app, require('./controllers/controllers')).init();
 
 app.listen(app.get('port'), function() {
   console.log('[' + moment().format('hh:mm:ss') + ']' + ' Express Server listening on port', app.get('port'));
