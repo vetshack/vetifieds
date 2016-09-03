@@ -6,6 +6,9 @@ logger = require('morgan'),
 dotenv = require('dotenv'),
 cookieParser = require('cookie-parser'),
 jwt = require('jsonwebtoken');
+db = require('./db'),
+app = express();
+
 
 dotenv.load();
 
