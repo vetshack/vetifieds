@@ -2,7 +2,8 @@ let user = require('./user'),
     auth = require('./auth'),
     mentor = require('./mentor'),
     jobs = require('./jobs'),
-    discount = require('./discounts')
+    discount = require('./discounts'),
+    event = require('./event');
 
 module.exports = (() => {
   let controllers = [
@@ -10,7 +11,8 @@ module.exports = (() => {
     auth,
     mentor,
     jobs,
-    discount
+    discount,
+    event
   ];
 
   let router = {};

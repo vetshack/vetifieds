@@ -1,69 +1,67 @@
 let ControllerPrototype = require('./controller.prototype.js');
 let authHelper = require('../helpers/authHelper');
-let Mentor = require('../db/models/mentors');
+let Event = require('../db/models/events');
 let Q = require('q');
 
 module.exports = (function() {
   let controller = ControllerPrototype.create({
-    path: '/api/mentors'
+    path: '/api/events'
   });
   let router = controller.router;
 
   router.get('/', function(req, res) {
-    res.send('We hit /mentor');
+    res.send('We hit /event');
   })
 
   router.get('/:location', function(req, res) {
 
     if (!authHelper.isAuthenticated()) return res.status(401).send('User unauthorized');
 
-    let getMentors = Q.nbind(Mentor.find, Mentor);
-    getMentors({
+    let getEvents = Q.nbind(Event.find, Event);
+    getEvents({
       location: req.params.location
     })
       .then(function(response) {
         res.json({ data: response });
       })
       .fail(function (error) {
-        console.log("failed, line 23 in /mentor")
+        console.log("failed, line 28 in /events")
         next(error);
       });
+
   });
 
   router.post('/', function(req, res) {
+    console.log('posting in events');
 
     if (!authHelper.isAuthenticated()) return res.status(401).send('User unauthorized');
 
-    req.assert('email', 'Email is not valid').isEmail();
-    req.assert('email', 'Email cannot be blank').notEmpty();
-    req.assert('type', 'Type cannot be blank').notEmpty();
-    req.sanitize('email').normalizeEmail({ remove_dots: false });
+    req.assert('eventname', 'Event name cannot be blank').notEmpty();
 
     let errors = req.validationErrors();
 
     if (errors) return res.status(400).send(errors);
 
-    let postMentor = Q.nbind(Mentor.create, Mentor);
-    postMentor({
-      type: req.body.type,
-      fullname: req.body.fullname,
-      username: req.body.username,
-      imageUrl: req.body.imageUrl,
+    let postEvent = Q.nbind(Event.create, Event);
+    postEvent({
+      eventname: req.body.eventname,
       location: req.body.location,
-      industry: req.body.industry,
-      unit: req.body.unit,
-      mos: req.body.mos,
+      poc: req.body.poc,
       phone: req.body.phone,
-      email: req.body.email
+      email: req.body.email,
+      duration: req.body.duration,
+      date: req.body.date,
+      description: req.body.description
     })
       .then(function () {
-        console.log('post successful');
+        console.log('post event success');
         res.json({success: true});
       })
       .fail(function (error) {
-        console.log("failed, line 45 in /mentor")
+        console.log("failed, line 48 in /events", error)
         next(error);
       });
+
   });
 
   return controller;
