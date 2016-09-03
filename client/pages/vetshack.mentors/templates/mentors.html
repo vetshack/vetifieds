@@ -1,3 +1,12 @@
 <h1>Hello Mentors</h1>
 
 <vetshack-searchbar location="vm.location" type="vm.type"></vetshack-searchbar>
+
+<div layout="row" layout-padding layout-wrap layout-margin ng-cloak layout-align="space-around" >
+  <div class="padded" md-whiteframe="{{height}}" flex="100" flex-gt-sm="50" layout="column" layout-align="center left"
+      ng-init="height = 3" ng-mouseenter="height = 6" ng-mouseleave="height = 3">
+    <h3><span ng-non-bindable>taco</span></h3>
+    <span>Type</span>
+    <span>Description</span>
+  </div>
+</div>
