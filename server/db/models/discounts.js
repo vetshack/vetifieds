@@ -8,4 +8,4 @@ let DiscountSchema = mongoose.Schema({
   who: String
 });
 
-module.exports = DiscountSchema;
+module.exports = mongoose.model('Discount', DiscountSchema);
