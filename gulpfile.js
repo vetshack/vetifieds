@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 var src = {
 	html: 'client/**/*.html',
   css: {
-    all: ['client/pages/**/css/*.css', 'node_modules/*/*.min.css']
+    all: ['client/pages/**/css/*.css', 'node_modules/*/*.min.css', 'node_modules/*/dist/*.css', 'node_modules/*/dist/css/*.css']
     // material: 'node_modules/angular-material/angular-material.min.css'
   },
 	scripts: {
