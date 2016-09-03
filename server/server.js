@@ -6,7 +6,7 @@ var express = require('express'),
     dotenv = require('dotenv'),
     cookieParser = require('cookie-parser'),
     jwt = require('jsonwebtoken');
-    db = require('./db'),
+    db = require('./db/db'),
     app = express();
 
 
