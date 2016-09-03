@@ -1,10 +1,8 @@
 let user = require('./user');
-let auth = require('./auth');
 
 module.exports = (() => {
   let controllers = [
-    user,
-    auth
+    user
   ];
 
   let router = {};

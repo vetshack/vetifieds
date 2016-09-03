@@ -15,32 +15,25 @@ let UserSchema = mongoose.Schema({
 });
 
 UserSchema.methods.comparePasswords = function (attempt) {
-  var defer = Q.defer();
-  var savedPassword = this.password;
+  let defer = Q.defer();
+  let savedPassword = this.password;
   bcrypt.compare(attempt, savedPassword, function (err, isMatch) {
-    if (err) {
-      defer.reject(err);
-    } else {
-      defer.resolve(isMatch);
-    }
+    if (err) defer.reject(err);
+    else defer.resolve(isMatch);
+    
   });
   return defer.promise;
 
 };
 
 UserSchema.pre('save', function (next) {
-  console.log("pre save")
-  var user = this;
+  let user = this;
 
   bcrypt.genSalt(saltRounds, function(err, salt) {
-    if (err) {
-      return next(err);
-    }
+    if (err) return next(err);
 
     bcrypt.hash(user.password, salt, function(err, hash) {
-      if (err) {
-        return next(err);
-      }
+      if (err) return next(err);
 
       user.password = hash;
       user.salt = salt;
