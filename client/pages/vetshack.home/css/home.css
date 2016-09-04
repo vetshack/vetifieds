@@ -8,6 +8,10 @@
   color: white;
 }
 
+.homeContainer {
+  margin-top: 65px;
+}
+
 .home {
   padding-left: 0;
   padding-right: 0;
@@ -102,4 +106,31 @@
 
 .organizationItem {
   background-color: #DEE4E0;
+}
+
+.navbar-inverse {
+  border: 0;
+}
+
+.navbar {
+  padding: 10px 25px 10px 25px;
+}
+
+.nav {
+  background-color: #232323 !important;
+  height: 57px;
+  font-size: 20px;
+}
+
+.nav li a {
+  color: #91CC32 !important;
+}
+
+.tabs {
+  widht: 100%;
+}
+
+.navbar-header a {
+  font-size: 35px;
+  color: #91CC32 !important;
 }
