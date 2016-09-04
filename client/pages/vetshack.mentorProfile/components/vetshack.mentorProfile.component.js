@@ -1,7 +1,7 @@
 const vetshack_mentorProfile = () => {
   let directive = {
     scope: {
-      signin: '&'
+      
     },
     templateUrl: '../pages/vetshack.auth/templates/mentorProfile.html',
     restrict: 'E',
