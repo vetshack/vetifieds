@@ -1,0 +1,30 @@
+#Discounts-Page {
+}
+
+#Filter-Parent {
+  margin: 2%;
+}
+
+.List-Parent {
+  display: inline;
+  list-style: none;
+}
+
+#List-Discount-Parent {
+  width: 95%;
+}
+
+.filter-list {
+  list-style: none;
+}
+
+.discounts {
+  margin-bottom: 1%;
+}
+
+.list-tile-parent {
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+

@@ -5,7 +5,7 @@ let ControllerPrototype = require('./controller.prototype'),
 
 module.exports = (function() {
   let controller = ControllerPrototype.create({
-    path: '/api/discount'
+    path: '/api/discounts'
   });
   let router = controller.router;
   
@@ -27,11 +27,7 @@ module.exports = (function() {
 
   router.post('/', function(req, res) {
 
-    if (!authHelper.isAuthenticated()) return res.status(401).send('User unauthorized');
-
-    req.assert('email', 'Email is not valid').isEmail();
-    req.assert('email', 'Email cannot be blank').notEmpty();
-    req.sanitize('email').normalizeEmail({ remove_dots: false });
+    // if (!authHelper.isAuthenticated()) return res.status(401).send('User unauthorized');
 
     let errors = req.validationErrors();
 

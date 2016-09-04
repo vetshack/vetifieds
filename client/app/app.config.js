@@ -36,6 +36,12 @@ function config($stateProvider, $urlRouterProvider, $httpProvider) {
       templateUrl: '../pages/vetshack.events/templates/events.html',
       controller: 'EventsController as vm'
     })
+    .state('discounts', {
+      url: '/discounts',
+      auth: false,
+      templateUrl: '../pages/vetshack.discounts/templates/discounts.html',
+      controller: 'DiscountsController as vm'
+    })
     .state('mentorProfile', {
       url: '/mentorprofile/:mentorId',
       auth: false,
