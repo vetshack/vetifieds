@@ -1,9 +1,7 @@
-const MentorProfileController = function(Auth, $state, $cookies) {
+const MentorProfileController = function(MentorProfile) {
   let vm = this;
-
-  vm.state = $state.current.name;
 };
 
-MentorProfileController.$inject = ['Auth', '$state', '$cookies'];
+MentorProfileController.$inject = ['MentorProfile'];
 
 export default MentorProfileController;
