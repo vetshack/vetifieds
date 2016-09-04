@@ -17,8 +17,7 @@ const HomeController = function(Home) {
   vm.init = () => {
     Home.getCata()
       .then((data) => {
-        console.log(data);
-        vm.categories = data.categories;
+        vm.categories = data;
       })
   }
 
