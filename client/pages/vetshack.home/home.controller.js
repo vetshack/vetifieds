@@ -1,6 +1,8 @@
 const HomeController = function(Home) {
   let vm = this;
 
+  vm.categories = [];
+
   vm.mentorList = [{
     title: 'Receive on target guidance',
     text: '...because they\'ve been down a similar path'
@@ -11,6 +13,16 @@ const HomeController = function(Home) {
     title: 'Receive on target guidance',
     text: '...because they\'ve been down a similar path'
   }];
+
+  vm.init = () => {
+    Home.getCata()
+      .then((data) => {
+        console.log(data);
+        vm.categories = data.categories;
+      })
+  }
+
+  vm.init();
 };
 
 HomeController.$inject = ['Home'];
