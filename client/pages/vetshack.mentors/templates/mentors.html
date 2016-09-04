@@ -1,30 +1,36 @@
-<h1>Hello Mentors</h1>
-
 <vetshack-searchbar location="vm.location" type="vm.type"></vetshack-searchbar>
 
 <div id="Mentor-Page">
   <!-- Filter -->
-  <div id="Filter-Parent">
-    <h3>Filter</h3>
-    <ul class="filter-list">
-      <li>Industry Professional 2 Veteran</li>
-      <li>Veteran 2 Veteran</li>
-    </ul>
-  </div>
-  <!-- Mentor List -->
-  <div id="List-Parent">
-    <div id="List-Mentors">
-      <ul class="mentors" ng-repeat="mentor in vm.mentors">
-        <li class="list-tile-parent" ng-click="vm.onClickMentor(mentor._id)" style=" list-style: none">
-          <div class="list-tile">
-              <h3><span>{{mentor.fullname}}</span></h3>
-              <span>{{mentor.type}}</span>
-              <span>{{mentor.industry}}</span>
-          </div>
-        </li>
-      </ul>
+  <ul class="List-Parent">
+<!--     <li>
+      <div id="Filter-Parent">
+        <ul class="filter-list">
+          <li><h3>Filter</h3></li>
+          <li>Industry Professional 2 Veteran</li>
+          <li>Veteran 2 Veteran</li>
+        </ul>
+      </div>
+    </li> -->
+    <li>
+      <!-- Mentor List -->
+    <div id="List-Mentor-Parent">
+      <div id="List-Mentors">
+        <ul class="mentors" ng-repeat="mentor in vm.mentors">
+          <li class="list-tile-parent" ng-click="vm.onClickMentor(mentor._id)" style=" list-style: none">
+            <div class="list-tile">
+                <h3><span>{{mentor.fullname}}</span></h3>
+                <ul style="list-style: none">
+                  <li>{{mentor.type}}</li>
+                  <li>{{mentor.industry}}</li>
+                </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+    </li>
+  </ul>
 </div>
 
 
