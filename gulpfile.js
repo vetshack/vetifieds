@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     babelify = require('babelify'),
+    watchify = require('watchify'),
     browserify = require('browserify'),
     nodemon = require('gulp-nodemon'),
     vinylSourceStream = require('vinyl-source-stream'),
@@ -16,10 +17,14 @@ var gulp = require('gulp'),
 var src = {
 	html: 'client/**/*.html',
   css: {
-    all: ['client/pages/**/css/*.css', 
-          'node_modules/*/*.min.css', 
-          'node_modules/*/dist/*.css', 
+    all: ['client/pages/*/css/*.css',
+          'node_modules/*/*.min.css',
+          'node_modules/*/dist/*.css',
           'node_modules/*/dist/css/*.css',
+          'node_modules/*/dist/fonts/*.tff',
+          'node_modules/*/dist/fonts/*.svg',
+          'node_modules/*/dist/fonts/*.woff',
+          'node_modules/*/dist/fonts/*.woff2',
           'client/shared/css/main.css',
           'client/shared/css/*/*.css'
          ]
@@ -29,7 +34,7 @@ var src = {
     out: 'client/shared/css/'
   },
 	scripts: {
-		all: ['client/app/*.js','client/app/*.*.js','client/pages/*/*.js', 'client/shared/components/*.*.*.js', 'client/shared/*.*.js'],
+		all: ['client/app/*.js', 'client/app/*.*.js', 'client/pages/*/*.js', 'client/pages/*/components/*.*.*.js', 'client/shared/components/*.*.*.js', 'client/shared/*.*.js'],
 		app: 'client/app/app.js',
     server: 'server/server.js'
 	}
@@ -75,11 +80,14 @@ gulp.task('jshint', function() {
 		.pipe(plugins.jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('scripts', ['jshint'], function() {
+gulp.task('scripts', function() {
 
 	var sources = browserify({
 		entries: src.scripts.app,
-		debug: true
+		debug: true,
+    cache : {},
+    packageCache : {},
+    plugin: [watchify]
 	})
 	.transform(babelify.configure({
 		presets: ["es2015"]

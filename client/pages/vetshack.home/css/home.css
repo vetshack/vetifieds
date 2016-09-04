@@ -1,0 +1,62 @@
+.home h1 {
+  text-align: center;
+}
+
+.homeStaticImage {
+  padding-top: 25px;
+  padding-bottom: 25px
+}
+
+.homeStaticImage img {
+  height: 35vh;
+  width: 100%;
+}
+
+.carouselImgContainer {
+  height: 100%;
+}
+
+.mentorTile {
+  padding: 45px 15px 45px 15px;
+  background-color: pink;
+  text-align: center;
+}
+
+.mentorTileContainer {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.mentorButtonContainer {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.mentorButton {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.giveBackItem {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.giveBackContainer {
+  border: 2px solid black;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.categories {
+  padding: 25px 0 25px 0;
+}
+
+.categoriesTiles {
+  padding: 15px;
+  border: 2px solid black;
+}
+
+.categoriesTilesContainer {
+  padding-bottom: 25px;
+}
