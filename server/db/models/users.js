@@ -1,11 +1,11 @@
-let mongoose = require('mongoose'),
+const mongoose = require('mongoose'),
     bcrypt   = require('bcrypt'),
     Q        = require('q'),
     saltRounds  = 10,
     db = require('../db.js');
 
 
-let UserSchema = mongoose.Schema({
+const UserSchema = mongoose.Schema({
   fullname: String,
   username: String,
   email: String,
@@ -17,8 +17,8 @@ let UserSchema = mongoose.Schema({
 });
 
 UserSchema.methods.comparePasswords = function (attempt) {
-  let defer = Q.defer();
-  let savedPassword = this.password;
+  let defer = Q.defer(),
+      savedPassword = this.password;
   bcrypt.compare(attempt, savedPassword, function (err, isMatch) {
     if (err) defer.reject(err);
     else defer.resolve(isMatch);

@@ -1,6 +1,6 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-let MentorSchema = mongoose.Schema({
+const MentorSchema = mongoose.Schema({
   type: String,
   fullname: String,
   username: String,

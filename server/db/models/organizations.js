@@ -11,4 +11,4 @@ const OrganizationSchema = mongoose.Schema({
   email: String
 });
 
-module.exports = OrganizationSchema;
+module.exports = mongoose.model('Organization', OrganizationSchema);

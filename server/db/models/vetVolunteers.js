@@ -9,4 +9,4 @@ const vetVolunteersSchema = mongoose.Schema({
   email: String
 });
 
-module.exports = vetVolunteersSchema;
+module.exports = mongoose.model('VetVolunteer', vetVolunteersSchema);
