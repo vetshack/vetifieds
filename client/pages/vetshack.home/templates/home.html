@@ -55,15 +55,15 @@
         <div class="categoriesTiles">
           <img ng-src="{{vm.pictures.icons[categorie]}}"/>
           <div class="">
-            <h4>{{categorie}}</h4>
+            <h4>{{categorie.title}}</h4>
           </div>
-          <md-content ng-show="categorie !== 'SOS'">
+          <md-content ng-show="categorie.title !== 'SOS'">
             <section layout="column" layout-align="space-around center" layout-wrap>
-              <md-button class="md-raised md-primary">View {{categorie}}</md-button>
-              <md-button class="md-raised md-primary">Post {{categorie}}</md-button>
+              <md-button class="md-raised md-primary" ui-sref="{{categorie.route}}">View {{categorie.title}}</md-button>
+              <md-button class="md-raised md-primary">Post {{categorie.title}}</md-button>
             </section>
           </md-content>
-          <md-content ng-show="categorie === 'SOS'">
+          <md-content ng-show="categorie.title === 'SOS'">
             <section layout="column" layout-align="space-around center" layout-wrap>
               <md-button class="md-raised md-primary" ui-sref="sos">Be a Support</md-button>
               <md-button class="md-raised md-primary" ui-sref="distress">Send Distress</md-button>

@@ -23,7 +23,14 @@ const HomeController = function(Home) {
   vm.init = () => {
     Home.getCata()
       .then((data) => {
-        vm.categories = data;
+        vm.categories = data.map((name) => {
+          return {
+            title: name,
+            route: name.toLowerCase()
+          }
+        });
+
+        console.log(vm.categories)
         Home.getPic()
           .then((data) => {
             vm.pictures = data;

@@ -7,25 +7,30 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-inverse" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" ui-sref="home">VETIFIEDS</a>
-        </div>
+    <div ng-controller="AuthController as vm">
+      <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="home">VETIFIEDS</a>
+          </div>
 
-        <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li>
+          <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li ng-hide="vm.loggedIn">
                 <a ui-sref="login">Login</a>
-            </li>
-            <li>
+              </li>
+              <li ng-show="vm.loggedIn">
+                <a ng-click="vm.logout()">Sign Out</a>
+              </li>
+              <li>
                 <a ui-sref="#">My Vetifieds</a>
-            </li>
-            <img src="http://i.imgur.com/p28qyUl.png"/>
-          </ul>
+              </li>
+              <img src="http://i.imgur.com/p28qyUl.png"/>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
 
     <ui-view></ui-view>
 
