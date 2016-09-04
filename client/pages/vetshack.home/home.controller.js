@@ -3,7 +3,7 @@ const HomeController = function(Home) {
   vm.loaded = false;
   vm.categories = [];
   vm.pictures = {};
-
+  vm.vetIcon = ''
   vm.mentorList = [{
     title: 'Receive on target guidance',
     text: 'Because they\'ve been down a similar path'
@@ -27,6 +27,20 @@ const HomeController = function(Home) {
         Home.getPic()
           .then((data) => {
             vm.pictures = data;
+            let icon = {};
+            vm.pictures.icons.map((image, key) => {
+              var image = JSON.parse(image)
+              if('vetgiveback' in image) {
+                vm.vetIcon = image['vetgiveback'];
+              }
+              for(var key in image) {
+                icon[key] = image[key];
+              }
+            })
+            console.log(icon['Discount & Deals']);
+            console.log(vm.pictures)
+
+            vm.pictures.icons = icon;
             vm.loaded = true;
           })
       })
