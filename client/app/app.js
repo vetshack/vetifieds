@@ -26,6 +26,6 @@ angular
     vetshack_jobs.name,
     vetshack_events.name,
     vetshack_sos.name,
-    vetshack_discounts.name
+    vetshack_discounts.name,
     vetshack_jobsPost.name
   ]);
