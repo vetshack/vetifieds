@@ -28,7 +28,7 @@ const HomeController = function(Home, $mdDialog, $mdMedia, SOS, $cookies) {
           if(name === "Discounts & Deals") {
             return {
               title: name,
-              route: 'distress'
+              route: 'discounts'
             }
           }
 
