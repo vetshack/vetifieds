@@ -7,7 +7,8 @@ let user = require('./user'),
     category = require('./category'),
     image = require('./image'),
     group = require('./group'),
-    sos = require('./sos');
+    sos = require('./sos'),
+    vetVolunteer = require('./vetVolunteer');
 
 module.exports = (() => {
   let controllers = [
@@ -20,7 +21,8 @@ module.exports = (() => {
     category,
     image,
     group,
-    sos
+    sos,
+    vetVolunteer
   ];
 
   let router = {};
