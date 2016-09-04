@@ -1,19 +1,19 @@
-const Mentors = function($http, $q) {
-  const url = 'localhost:1337/#/';
+const Mentors = function($http, $q, data) {
 
   const service = {
     
     fetchLocalMentors: (location) => {
       return $http({
         method: 'GET',
-        url: url + '/mentor/' + location
+        url: 'api/mentors/' + location
       })
       .then((resp, err) => {
         if(err) {
           console.log(err);
           return err;
         } else {
-          return resp.data;
+          data = resp.data;
+          return data;
         }
       })
       .catch((err) => {
@@ -36,6 +36,17 @@ const Mentors = function($http, $q) {
       }
       ];
       return mentors;
+    },
+    testFilter: () => {
+      const filters = [];
+      if(data) {
+        for(let i = 0; i < data.length; i++) {
+          filters.push(data[i].type);
+        }
+        return filters;
+      } else {
+        return filters;
+      }
     }
   };
 
