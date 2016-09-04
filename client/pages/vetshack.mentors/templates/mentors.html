@@ -1,3 +1,20 @@
 <h1>Hello Mentors</h1>
 
 <vetshack-searchbar location="vm.location" type="vm.type"></vetshack-searchbar>
+
+<div id="List-Parent">
+  <div id="List-Mentors" ng-init="mentors = vm.getMentors()">
+    <ul class="mentors" ng-repeat="mentor in mentors">
+      <li class="list-tile-parent" style="list-style: none">
+        <div class="list-tile">
+            <h3><span>{{mentor.fullname}}</span></h3>
+            <span>{{mentor.type}}</span>
+            <span>{{mentor.industry}}</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+

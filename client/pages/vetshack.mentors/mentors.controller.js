@@ -1,10 +1,17 @@
-const MentorsController = function(Mentors) {
-  let vm = this;
+const MentorsController = function(Mentors, $state) {
+  const vm = this;
 
-  vm.location = 'home';
-  vm.type = 'test';
+  vm.getMentors = Mentors.test;
+
+  vm.onClickMentor = (mentorId) => {
+    console.log("Mentors ID: ", mentorId);
+    // once routing is complete pass in mentorId
+    // i.e.: /mentores/:mentorId
+    $state.go('home');
+  };
+
 };
 
-MentorsController.$inject = ['Mentors'];
+MentorsController.$inject = ['Mentors', '$state'];
 
 export default MentorsController;
