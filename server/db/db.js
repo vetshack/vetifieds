@@ -3,9 +3,7 @@ let mongoose = require('mongoose'),
 
 require('dotenv').config();
 
-let dbURL = process.env.hosted === false 
-            ?   'mongodb://'+ process.env.DB_USER + ':' + process.env.DB_PASS + '@ds019876.mlab.com:19876/vetifieds'
-            : 'mongodb://localhost/vetifieds';
+let dbURL = 'mongodb://'+ process.env.DB_USER + ':' + process.env.DB_PASS + '@ds019876.mlab.com:19876/vetifieds'
 
 let db = mongoose.connection;
 
