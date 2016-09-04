@@ -34,6 +34,18 @@ function config($stateProvider, $urlRouterProvider, $httpProvider) {
       auth: false,
       templateUrl: '../pages/vetshack.auth/templates/auth.html',
       controller: 'AuthController as vm'
+    })
+    .state('sos', {
+      url: '/sos',
+      auth: true,
+      templateUrl: '../pages/vetshack.sos/templates/sosSupportRegister.html',
+      controller: 'SosController as vm'
+    })
+    .state('distress', {
+      url: '/distress',
+      auth: true,
+      templateUrl: '../pages/vetshack.sos/templates/sosSendDistress.html',
+      controller: 'SosController as vm'
     });
   $urlRouterProvider
     .otherwise('/home');
