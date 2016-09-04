@@ -109,5 +109,12 @@ module.exports = (function() {
 
   });
 
+  router.post('/isAuthenticated', function(req, res) {
+
+    if (!authHelper.isAuthenticated()) return res.status(401).json({authenticated: false});
+    else return res.status(200).json({authenticated: true})
+
+  });
+
   return controller;
 })();
