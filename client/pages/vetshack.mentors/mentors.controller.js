@@ -1,13 +1,21 @@
 const MentorsController = function(Mentors, $state) {
   const vm = this;
 
-  const tester = (Mentors.fetchLocalMentors("SantaMonicaCA"));
+  // const tester = (Mentors.fetchLocalMentors("SantaMonicaCA"));
 
-  console.log(tester);
+  vm.mentors = [];
 
-  vm.getMentors = Mentors.test;
+  vm.init = () => {
+    Mentors.fetchLocalMentors("SantaMonicaCA")
+      .then((data) => {
+        console.log(data);
+        vm.mentors = data.data;
+      })
+  }
 
-  vm.getFilters = Mentors.testFilter;
+  // vm.getMentors = Mentors.test;
+
+  // vm.getFilters = Mentors.testFilter;
 
   vm.onClickMentor = (mentorId) => {
     console.log("Mentors ID: ", mentorId);
@@ -16,6 +24,7 @@ const MentorsController = function(Mentors, $state) {
     $state.go('home');
   };
 
+  vm.init()
 };
 
 MentorsController.$inject = ['Mentors', '$state'];
