@@ -7,6 +7,7 @@ const AuthController = function(Auth, $state, $cookies) {
     Auth.login(username, password)
     .then((response) => {
       $cookies.put('jwt', response.data.token);
+      $state.go('home');
     });
   };
 
@@ -14,6 +15,7 @@ const AuthController = function(Auth, $state, $cookies) {
     Auth.signup(email, fullName, username, password, isVet)
     .then((response) => {
       $cookies.put('jwt', response.data.token);
+      $state.go('home');
     });
   };
 
