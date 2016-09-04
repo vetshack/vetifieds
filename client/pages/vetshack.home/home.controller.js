@@ -24,13 +24,19 @@ const HomeController = function(Home) {
     Home.getCata()
       .then((data) => {
         vm.categories = data.map((name) => {
+          if(name === "Discounts & Deals") {
+            return {
+              title: name,
+              route: 'distress'
+            }
+          }
+
           return {
             title: name,
             route: name.toLowerCase()
           }
         });
 
-        console.log(vm.categories)
         Home.getPic()
           .then((data) => {
             vm.pictures = data;
