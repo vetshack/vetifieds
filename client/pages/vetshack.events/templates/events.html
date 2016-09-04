@@ -1,0 +1,38 @@
+<vetshack-searchbar location="vm.location" type="vm.type"></vetshack-searchbar>
+
+<div id="Events-Page">
+  <!-- Filter -->
+  <ul class="List-Parent">
+<!--     <li>
+      <div id="Filter-Parent">
+        <ul class="filter-list">
+          <li><h3>Filter</h3></li>
+          <li>Industry Professional 2 Veteran</li>
+          <li>Veteran 2 Veteran</li>
+        </ul>
+      </div>
+    </li> -->
+    <li>
+      <!-- Event List -->
+    <div id="List-Event-Parent">
+      <div id="List-Events">
+        <ul class="events" ng-repeat="event in vm.events">
+          <li class="list-tile-parent" ng-click="vm.onClickEvent(event._id)" style=" list-style: none">
+            <div class="list-tile">
+                <h3><span>{{event.eventname}}</span></h3>
+                <ul style="list-style: none">
+                  <li>{{event.location}}</li>
+                  <li>{{event.poc}}</li>
+                  <li>{{event.description}}</li>
+                  <li>{{event.date}}</li>
+                </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </li>
+  </ul>
+</div>
+
+

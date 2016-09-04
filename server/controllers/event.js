@@ -15,7 +15,7 @@ module.exports = (function() {
 
   router.get('/:location', function(req, res) {
 
-    if (!authHelper.isAuthenticated()) return res.status(401).send('User unauthorized');
+    // if (!authHelper.isAuthenticated()) return res.status(401).send('User unauthorized');
 
     let getEvents = Q.nbind(Event.find, Event);
     getEvents({
@@ -34,7 +34,7 @@ module.exports = (function() {
   router.post('/', function(req, res) {
     console.log('posting in events');
 
-    if (!authHelper.isAuthenticated()) return res.status(401).send('User unauthorized');
+    // if (!authHelper.isAuthenticated()) return res.status(401).send('User unauthorized');
 
     req.assert('eventname', 'Event name cannot be blank').notEmpty();
 
