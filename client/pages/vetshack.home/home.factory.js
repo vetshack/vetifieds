@@ -25,10 +25,12 @@ const Home = function($http, $q) {
     });
   };
 
+
   let service = {
     getCata: getCata,
     getPic: getPic
   };
+
 
   return service;
 };

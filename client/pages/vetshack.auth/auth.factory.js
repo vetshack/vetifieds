@@ -16,7 +16,7 @@ const Auth = function($http, $q, $rootScope, $cookies) {
     });
   };
 
-  const signup = (email, fullname, username, password, isVet) => {
+  const signup = (email, fullname, username, password, location, isVet) => {
     return $http({
       method: 'POST',
       url: 'api/auth/signup',
@@ -25,6 +25,7 @@ const Auth = function($http, $q, $rootScope, $cookies) {
         fullname: fullname,
         username: username,
         password: password,
+        location: location,
         isVet: isVet
       }
     })

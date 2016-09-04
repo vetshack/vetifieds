@@ -4,7 +4,7 @@
       Have an account?
     </a>
 
-    <form name="vm.signinForm" ng-submit="vm.signinForm && signup({fullName: vm.fullName, email: vm.email, username: vm.username, password: vm.password, isVet: vm.isVet})" novalidate>
+    <form name="vm.signinForm" ng-submit="vm.signinForm && signup({fullName: vm.fullName, email: vm.email, username: vm.username, password: vm.password, location: vm.location, isVet: vm.isVet})" novalidate>
 
       <md-input-container>
         <label>Full Name</label>
@@ -35,6 +35,14 @@
         <input type="password" name="password" ng-model="vm.password">
         <div ng-messages="vm.signinForm.password.$error" role="alert">
           <div ng-message="required">You must enter a password.</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container>
+        <label>Zip Code</label>
+        <input type="text" name="location" ng-model="vm.location">
+        <div ng-messages="vm.signinForm.location.$error" role="alert">
+          <div ng-message="required">You must enter a location.</div>
         </div>
       </md-input-container>
 

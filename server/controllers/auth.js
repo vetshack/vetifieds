@@ -66,6 +66,8 @@ module.exports = (function() {
 
     if (errors) return res.status(400).send(errors);
 
+    console.log('inside signup', req.body)
+
     let reqUser = {
       fullname: req.body.fullname,
       username: req.body.username,
