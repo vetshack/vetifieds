@@ -1,17 +1,31 @@
-angular
-  .module('vetshack')
+const vetshacks_run = angular
+  .module('vetshack.run', [])
   .run(run);
 
-  function run($rootScope, $state, $cookies, Auth) {
-    $rootScope.$on('$stateChangeStart', (event, to) => {
-      if(!to.auth) {
-        return;
+/* @ngInject */
+
+function run($rootScope, $cookies, $state, Auth) {
+  $rootScope.$on('$stateChangeStart', (event, to) => {
+    if(!to.auth) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const jwt = $cookies.get('jwt');
+
+    if(Auth.checkAuth(jwt)) {
+      to.auth = false;
+      $state.go('home');
+    } else {
+      if(to.name === 'login' || to.name === 'signup') {
+        to.auth = false;
+        $state.go(to.name);
+      } else {
+        $state.go('home');
       }
+    }
+  });
+}
 
-      event.preventDefault();
-
-      const jwt = $cookies.get('jwt');
-      
-      Auth.checkAuth(jwt);
-    })
-  }
+export default vetshacks_run;
