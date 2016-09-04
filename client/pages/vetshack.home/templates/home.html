@@ -30,9 +30,8 @@
   <img ng-src="http://www.backdrops.net/images/34%20Mottled%20Blue%208'%20x%2010'.jpg" />
 </div>
 
-
 <div class="container giveBackContainer">
-  <md-content layout="row" layout-align="center center" layout-wrap>
+  <md-content class="giveBackItemContainer" layout="row" layout-align="center center" layout-wrap>
     <section layout="row" layout-align="center center" layout-wrap>
       <div class="giveBackItem">
         <h4>Veterans giving back. Lorem ipsum dolor sit amet.</h4>
@@ -48,7 +47,6 @@
   </md-content>
 </div>
 
-
 <div class="container categories">
   <div class="row">
     <div class="col-xs-4 categoriesTilesContainer" ng-repeat="categorie in vm.categories">
@@ -62,5 +60,24 @@
         </md-content>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="container organizationContainer">
+  <div class="organizationContainerChild">
+    <md-content class="organizationItem" layout="column" layout-align="center center" layout-wrap>
+      <section layout="row" layout-align="center center" layout-wrap>
+        <div class="">
+          <h4>Are you an organization serving the veteran community? Join our Vetifieds network.</h4>
+        </div>
+      </section>
+
+      <section layout="row" layout-align="space-around center" layout-wrap>
+        <div class="organizationItem">
+          <md-button class="md-raised md-primary mentorButton">View Organizations</md-button>
+          <md-button class="md-raised md-primary mentorButton">Register Organization</md-button>
+        </div>
+      </section>
+    </md-content>
   </div>
 </div>
