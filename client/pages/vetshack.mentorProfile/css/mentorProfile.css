@@ -1,0 +1,23 @@
+.card-container {
+  width: 100%;
+}
+
+.mentor-title {
+  width: 100%;
+}
+
+.mentor-name {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 8px;
+}
+
+.mentors-nav {
+  display: inline;
+  margin-right: 8px;
+}
+
+.card-title {
+  padding-left: 10px;
+}

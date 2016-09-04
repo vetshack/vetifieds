@@ -23,6 +23,12 @@ function config($stateProvider, $urlRouterProvider, $httpProvider) {
       templateUrl: '../pages/vetshack.mentors/templates/mentors.html',
       controller: 'MentorsController as vm'
     })
+    .state('mentorProfile', {
+      url: '/mentorprofile',
+      auth: false,
+      templateUrl: '../pages/vetshack.mentorProfile/templates/mentorProfile.html',
+      controller: 'MentorProfileController as vm'
+    })
     .state('signup', {
       url: '/signup',
       auth: false,

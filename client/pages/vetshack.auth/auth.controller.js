@@ -14,7 +14,7 @@ const AuthController = function(Auth, $state, $cookies) {
     Auth.signup(email, fullName, username, password, isVet)
     .then((response) => {
       $cookies.put('jwt', response.data.token);
-    })
+    });
   };
 
   vm.state = $state.current.name;
