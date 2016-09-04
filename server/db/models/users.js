@@ -1,11 +1,11 @@
-let mongoose = require('mongoose'),
+const mongoose = require('mongoose'),
     bcrypt   = require('bcrypt'),
     Q        = require('q'),
     saltRounds  = 10,
     db = require('../db.js');
 
 
-let UserSchema = mongoose.Schema({
+const UserSchema = mongoose.Schema({
   fullname: String,
   username: String,
   email: String,

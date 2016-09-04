@@ -1,6 +1,6 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-let JobSchema = mongoose.Schema({
+const JobSchema = mongoose.Schema({
   jobname: String,
   industry: String,
   poc: String,
