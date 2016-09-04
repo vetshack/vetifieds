@@ -4,7 +4,7 @@
       Have an account?
     </a>
 
-    <form name="vm.signinForm" ng-submit="vm.signinForm && signup({fullName: vm.fullName, email: vm.email, username: vm.username, password: vm.password, location: vm.location, isVet: vm.isVet})" novalidate>
+    <form name="vm.signinForm" ng-submit="vm.signinForm.$valid && signup({fullName: vm.fullName, email: vm.email, username: vm.username, password: vm.password, location: vm.location, isVet: vm.isVet})" novalidate>
 
       <md-input-container>
         <label>Full Name</label>
