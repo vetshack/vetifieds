@@ -54,6 +54,7 @@ const Auth = function($http, $q, $rootScope, $cookies) {
 
   const logout = (jwt) => {
     $cookies.remove('jwt');
+    $cookies.remove('userId');
     $state.go('home');
   };
 
