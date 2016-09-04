@@ -65,6 +65,12 @@ function config($stateProvider, $urlRouterProvider, $httpProvider) {
       auth: true,
       templateUrl: '../pages/vetshack.sos/templates/sosSendDistress.html',
       controller: 'SosController as vm'
+    })
+    .state('jobsPost', {
+      url: '/jobsPost',
+      auth: false,
+      templateUrl: '../pages/vetshack.jobsPost/templates/jobsPost.html',
+      controller: 'JobsPostController as vm'
     });
   $urlRouterProvider
     .otherwise('/home');

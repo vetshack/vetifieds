@@ -1,0 +1,18 @@
+.alert {
+  width: 80%;
+  text-align: center;
+}
+
+.jobPostFormContainer {
+  padding: 25px;
+}
+
+.jobPostFormContainerChild {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #DEE4E0;
+}
+
+.postSubmit {
+  width: 50%;
+}

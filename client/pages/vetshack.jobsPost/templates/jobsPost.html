@@ -1,0 +1,99 @@
+<div>
+  <md-content class="container jobsPostContainer">
+    <form name="vm.userForm" ng-submit="vm.userForm.$valid && vm.submitForm()" novalidate autocomplete="off">
+      <div class="jobPostFormContainer">
+        <div class="jobPostFormContainerChild" layout="column" layout-align="center center" layout-padding>
+          <md-input-container class="postSubmit">
+            <label>Jobname</label>
+            <input type="text" name="jobname" ng-model="vm.post.jobname" required>
+            <div ng-messages="vm.userForm.jobname.$error" role="alert">
+              <div ng-message="required">You must enter a jobname.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="postSubmit">
+            <label>Industry</label>
+            <input type="text" name="Industry" ng-model="vm.post.industry" required>
+            <div ng-messages="vm.userForm.Industry.$error" role="alert">
+              <div ng-message="required">You must enter an Industry.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="postSubmit">
+            <label>Point of Contact</label>
+            <input type="text" name="poc" ng-model="vm.post.poc" required>
+            <div ng-messages="vm.userForm.poc.$error" role="alert">
+              <div ng-message="required">You must enter a Point of Contact.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="postSubmit">
+            <label>Description</label>
+            <textarea ng-model="vm.post.description" md-maxlength="350" rows="5" md-select-on-focus></textarea>
+            <div ng-messages="vm.userForm.Description.$error" role="alert">
+              <div ng-message="required">You must enter a Description.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="postSubmit">
+            <label>Phone</label>
+            <input type="text" name="Phone" ng-model="vm.post.phone" required>
+            <div ng-messages="vm.userForm.Phone.$error" role="alert">
+              <div ng-message="required">You must enter a Phone number.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="postSubmit">
+            <label>Email</label>
+            <input type="email" name="Email" ng-model="vm.post.email" required>
+            <div ng-messages="vm.userForm.Email.$error" role="alert">
+              <div ng-message="required">You must enter a Email.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="postSubmit">
+            <label>Location</label>
+            <input type="text" name="location" ng-model="vm.post.location" required>
+            <div ng-messages="vm.userForm.location.$error" role="alert">
+              <div ng-message="required">You must enter a location.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="postSubmit">
+            <label>Zip Code</label>
+            <input type="number" name="zipcode" ng-model="vm.post.zipcode" required>
+            <div ng-messages="vm.userForm.zipcode.$error" role="alert">
+              <div ng-message="required">You must enter a location.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="postSubmit">
+            <label>Website</label>
+            <input type="url" name="website" ng-model="vm.post.website" required>
+            <div ng-messages="vm.userForm.website.$error" role="alert">
+              <div ng-message="required">You must enter a website.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="postSubmit">
+            <label>Skills Requirement</label>
+            <input type="text" name="skillsreq" ng-model="vm.post.skillsreq" ng-list required>
+            <div ng-messages="vm.userForm.username.$error" role="alert">
+              <div ng-message="required">You must enter a skillsreq.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container layout="row" layout-align="center center">
+            <md-button type="submit" class="md-raised md-primary">Submit</md-button>
+            <md-button ng-click="vm.clear()" class="md-raised md-warn">Clear</md-button>
+          </md-input-container>
+
+          <div class="alert alert-success" ng-if="vm.success">
+            <strong>Your job was successfully posted!</strong>
+          </div>
+        </div>
+      </div>
+    </form>
+  </md-content>
+
+</div>
