@@ -22,5 +22,28 @@ module.exports = (function() {
       });
   });
 
+  router.post('/', function(req, res) {
+    let postIcon = Q.nbind(Image.findOneAndUpdate, Image);
+    if (req.body.type === "icon") {
+      let tempObj = {};
+      tempObj[req.body.name] = req.body.url;
+      postIcon({},
+        {$push: { "icons": JSON.stringify(tempObj) }},
+        {upsert: true}
+      )
+      .then(function(response) {
+        // console.log('after push', response);
+        res.send({ success: true });
+      })
+    } else {
+      postIcon({},
+        {$push: {"imageUrls": req.body.url}}
+      )
+        .then(function(response) {
+          res.send({ success: true });
+        })
+    }
+  })
+
   return controller;
 })();
