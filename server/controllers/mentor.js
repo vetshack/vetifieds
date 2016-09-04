@@ -11,7 +11,7 @@ module.exports = (function() {
 
   router.get('/', function(req, res) {
     res.send('We hit /mentor');
-  })
+  });
 
   router.get('/:location', function(req, res) {
 
@@ -20,6 +20,20 @@ module.exports = (function() {
     let getMentors = Q.nbind(Mentor.find, Mentor);
     getMentors({
       location: req.params.location
+    })
+      .then(function(response) {
+        res.json({ data: response });
+      })
+      .fail(function (error) {
+        console.log("failed, line 23 in /mentor")
+        next(error);
+      });
+  });
+
+  router.get('/id/:mentorId', function(req, res) {
+    let getMentors = Q.nbind(Mentor.find, Mentor);
+    getMentors({
+      _id: req.params.mentorId
     })
       .then(function(response) {
         res.json({ data: response });

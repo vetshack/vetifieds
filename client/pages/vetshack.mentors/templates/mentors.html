@@ -15,7 +15,7 @@
   <div id="List-Parent">
     <div id="List-Mentors">
       <ul class="mentors" ng-repeat="mentor in vm.mentors">
-        <li class="list-tile-parent" ng-click="vm.onClickMentor(mentor.id)" style=" list-style: none">
+        <li class="list-tile-parent" ng-click="vm.onClickMentor(mentor._id)" style=" list-style: none">
           <div class="list-tile">
               <h3><span>{{mentor.fullname}}</span></h3>
               <span>{{mentor.type}}</span>
