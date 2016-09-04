@@ -18,12 +18,13 @@
 }
 
 .homeStaticImage img {
-  height: 35vh;
   width: 100%;
+  height: auto;
 }
 
-.carouselImgContainer {
-  height: 100%;
+.carouselImg {
+  width: 100%;
+  height: auto;
 }
 
 .mentorTile {

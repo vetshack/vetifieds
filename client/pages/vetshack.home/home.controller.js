@@ -1,7 +1,8 @@
 const HomeController = function(Home) {
   let vm = this;
-
+  vm.loaded = false;
   vm.categories = [];
+  vm.pictures = {};
 
   vm.mentorList = [{
     title: 'Receive on target guidance',
@@ -13,7 +14,7 @@ const HomeController = function(Home) {
     title: 'Rewinding expereience',
     text: 'Helping others develop, and succeed is invaluable.'
   }];
-  
+
   vm.isActive = false;
 
   vm.toggleActive = () => {
@@ -23,6 +24,11 @@ const HomeController = function(Home) {
     Home.getCata()
       .then((data) => {
         vm.categories = data;
+        Home.getPic()
+          .then((data) => {
+            vm.pictures = data;
+            vm.loaded = true;
+          })
       })
   }
 

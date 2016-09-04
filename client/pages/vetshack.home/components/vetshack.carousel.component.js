@@ -1,12 +1,13 @@
 const vetshack_carousel = () => {
   let directive = {
     scope: {
-      signin: '&'
+      image: '='
     },
     templateUrl: '../pages/vetshack.home/templates/carousel.html',
     restrict: 'E',
     controller: CarouselCtrl,
-    controllerAs: 'vm'
+    controllerAs: 'vm',
+    bindToController: true
   };
 
   return directive;
@@ -22,17 +23,18 @@ function CarouselCtrl() {
 
   vm.slides = [{
     id: 0,
-    image: "http://www.backdrops.net/images/34%20Mottled%20Blue%208'%20x%2010'.jpg",
+    image: vm.image[0],
     text: ''
   },{
     id: 1,
-    image: "http://www.backdrops.net/images/34%20Mottled%20Blue%208'%20x%2010'.jpg",
+    image: vm.image[1],
     text: ''
   },{
     id: 2,
-    image: "http://www.backdrops.net/images/34%20Mottled%20Blue%208'%20x%2010'.jpg",
+    image: vm.image[2],
     text: ''
   }]
+
 };
 
 export default vetshack_carousel;
