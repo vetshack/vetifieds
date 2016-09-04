@@ -6,4 +6,5 @@
 @import url(vetshack.mentors/css/mentors.css);
 @import url(vetshack.mentorProfile/css/mentorProfile.css);
 @import url(vetshack.home/css/home.css);
-@import url(pages/shared/components/css/searchBar.css);
+@import url(vetshack.mentors/css/searchBar.css);
+@import url(vetshack.jobs/css/jobs.css);

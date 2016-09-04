@@ -80,7 +80,7 @@ gulp.task('jshint', function() {
 		.pipe(plugins.jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('scripts', function() {
+gulp.task('scripts', ['jshint'], function() {
 
 	var sources = browserify({
 		entries: src.scripts.app,

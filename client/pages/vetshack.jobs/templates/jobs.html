@@ -1,0 +1,37 @@
+<vetshack-searchbar location="vm.location" type="vm.type"></vetshack-searchbar>
+
+<div id="Jobs-Page">
+  <!-- Filter -->
+  <ul class="List-Parent">
+<!--     <li>
+      <div id="Filter-Parent">
+        <ul class="filter-list">
+          <li><h3>Filter</h3></li>
+          <li>Industry Professional 2 Veteran</li>
+          <li>Veteran 2 Veteran</li>
+        </ul>
+      </div>
+    </li> -->
+    <li>
+      <!-- Job List -->
+    <div id="List-Job-Parent">
+      <div id="List-Jobs">
+        <ul class="jobs" ng-repeat="job in vm.jobs">
+          <li class="list-tile-parent" ng-click="vm.onClickJob(job._id)" style=" list-style: none">
+            <div class="list-tile">
+                <h3><span>{{job.jobname}}</span></h3>
+                <ul style="list-style: none">
+                  <li>{{job.industry}}</li>
+                  <li>{{job.poc}}</li>
+                  <li>{{job.description}}</li>
+                </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </li>
+  </ul>
+</div>
+
+

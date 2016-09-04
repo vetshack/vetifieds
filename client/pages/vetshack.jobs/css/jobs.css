@@ -1,4 +1,4 @@
-#Mentor-Page {
+#Jobs-Page {
 }
 
 #Filter-Parent {
@@ -10,7 +10,7 @@
   list-style: none;
 }
 
-#List-Mentor-Parent {
+#List-Job-Parent {
   width: 95%;
 }
 
@@ -18,7 +18,7 @@
   list-style: none;
 }
 
-.mentors {
+.jobs {
   margin-bottom: 1%;
 }
 
