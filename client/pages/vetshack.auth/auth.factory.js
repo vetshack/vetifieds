@@ -36,6 +36,10 @@ const Auth = function($http, $q) {
     });
   };
 
+  const checkAuth = (jwt) => {
+    
+  };
+
   const service = {
     login: login,
     signup: signup
@@ -44,6 +48,6 @@ const Auth = function($http, $q) {
   return service;
 };
 
-Auth.$inject = ['$http', '$q'];
+Auth.$inject = ['$http', '$q', '$cookies'];
 
 export default Auth;
