@@ -6,7 +6,9 @@ const AuthController = function(Auth, $state, $cookies) {
   vm.signin = function(username, password) {
     Auth.login(username, password)
     .then((response) => {
+      console.log('response from signin', response)
       $cookies.put('jwt', response.data.token);
+      $cookies.put('userId', response.data.user._id)
       vm.loggedIn = true;
       $state.go('home');
     });
