@@ -53,8 +53,6 @@ const HomeController = function(Home, $mdDialog, $mdMedia, SOS, $cookies) {
                 icon[key] = image[key];
               }
             });
-            console.log(icon['Discount & Deals']);
-            console.log(vm.pictures);
 
             vm.pictures.icons = icon;
             vm.loaded = true;
@@ -139,6 +137,7 @@ const HomeController = function(Home, $mdDialog, $mdMedia, SOS, $cookies) {
             $mdDialog.hide(answer);
             vm.denySupport();
           }
+          $scope.hide();
         });
     };
 
