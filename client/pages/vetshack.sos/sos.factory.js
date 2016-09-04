@@ -19,7 +19,6 @@ const SoS = function($http, $cookies) {
   };
 
   const sendDistressMsg = (message, email, location) => {
-    console.log('inside factory', message, email, location);
     let params = {
       message: message
     };
@@ -28,15 +27,9 @@ const SoS = function($http, $cookies) {
       params: params
     };
 
-    // let config = { message };
-    return $http({
-      method: 'GET',
-      url: 'api/sos/' + location + '/' + email
-    })
-
     return $http.get('api/sos/' + location + '/' + email, config)
     .then(function(response) {
-      console.log(response)
+      return response;
     })
     
   };

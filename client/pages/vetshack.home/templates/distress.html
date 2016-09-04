@@ -1,10 +1,10 @@
 <div id="popupdistress">
   <h1>What would you like to say?</h1>
   <form>
-    <textarea ng-model="vm.message"></textarea>
+    <textarea ng-model="$scope.message"></textarea>
   </form>
-  {{message}}
-  <md-button class="md-primary md-raised" ng-click="answerd()" >
+  {{$scope.message}}
+  <md-button class="md-primary md-raised" ng-click="answerd($scope.message)" >
     Alright.
   </md-button>
 </div>
