@@ -1,17 +1,17 @@
-const Jobs = function($http, $q, data) {
+const Events = function($http, $q, data) {
 
   const service = {
-    fetchLocalJobs: (location) => {
+    fetchLocalEvents: (location) => {
       return $http({
         method: 'GET',
-        url: 'api/jobs/' + location
+        url: 'api/events/' + location
       })
       .then((resp) => {
           data = resp.data;
           return data;
       })
       .catch((err) => {
-        console.log("Error in fetchLocalJobs in Jobs service");
+        console.log("Error in fetchLocalEvents in Events service");
         return err;
       });
     },
@@ -31,6 +31,6 @@ const Jobs = function($http, $q, data) {
   return service;
 };
 
-Jobs.$inject = ['$http', '$q'];
+Events.$inject = ['$http', '$q'];
 
-export default Jobs;
+export default Events;
