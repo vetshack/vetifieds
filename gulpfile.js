@@ -82,13 +82,16 @@ gulp.task('jshint', function() {
 
 gulp.task('scripts', function() {
 
-	var sources = sources || watchify(browserify({
+	var sources = browserify({
 		entries: src.scripts.app,
-		debug: true
+		debug: true,
+    cache : {},
+    packageCache : {},
+    plugin: [watchify]
 	})
 	.transform(babelify.configure({
 		presets: ["es2015"]
-	})));
+	}));
 
 	return sources.bundle()
 		.pipe(vinylSourceStream(out.scripts.file))
