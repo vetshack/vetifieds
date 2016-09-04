@@ -1,9 +1,9 @@
-const vetshack_mentorProfile = () => {
+const vetshack_mentorProfileText = () => {
   let directive = {
     scope: {
       
     },
-    templateUrl: '../pages/vetshack.auth/templates/mentorProfile.html',
+    templateUrl: '../pages/vetshack.mentorProfile/templates/mentorProfileText.html',
     restrict: 'E',
     controller: MentorProfileCtrl,
     controllerAs: 'vm'
@@ -18,4 +18,4 @@ function MentorProfileCtrl() {
   let vm = this;
 };
 
-export default vetshack_mentorProfile;
+export default vetshack_mentorProfileText;
