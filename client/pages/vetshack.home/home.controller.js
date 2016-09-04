@@ -28,13 +28,15 @@ const HomeController = function(Home, $mdDialog, $mdMedia, SOS, $cookies) {
           if(name === "Discounts & Deals") {
             return {
               title: name,
-              route: 'discounts'
+              route: 'discounts',
+              post: 'discounts' + 'Post'
             }
           }
 
           return {
             title: name,
-            route: name.toLowerCase()
+            route: name.toLowerCase(),
+            post: name.toLowerCase() + 'Post'
           }
         });
 
