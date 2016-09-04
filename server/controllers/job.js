@@ -27,7 +27,7 @@ module.exports = (function() {
 
   router.post('/', function(req, res) {
 
-    if (!authHelper.isAuthenticated()) return res.status(401).send('User unauthorized');
+    // if (!authHelper.isAuthenticated()) return res.status(401).send('User unauthorized');
 
     req.assert('email', 'Email is not valid').isEmail();
     req.assert('email', 'Email cannot be blank').notEmpty();
