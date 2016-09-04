@@ -18,7 +18,7 @@ module.exports = (function() {
   router.get('/:location/:email', function(req, res) {
 
     //if (!authHelper.isAuthenticated()) return res.status(401).send('User unauthorized');
-    console.log('params:', req.params.location, req.params.userid)
+    console.log('params:', req.params.location, req.params.userid, req.query.message)
     let getSupports = Q.nbind(User.find, User);
 
     getSupports({

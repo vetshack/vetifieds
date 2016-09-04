@@ -9,6 +9,7 @@ import vetshack_mentors from '../pages/vetshack.mentors/mentors.module';
 import vetshack_mentorProfile from '../pages/vetshack.mentorProfile/mentorProfile.module';
 import vetshack_jobs from '../pages/vetshack.jobs/jobs.module';
 import vetshack_events from '../pages/vetshack.events/events.module';
+import vetshack_sos from '../pages/vetshack.sos/sos.module';
 
 angular
   .module('vetshack', [
@@ -21,5 +22,6 @@ angular
     vetshack_mentors.name,
     vetshack_mentorProfile.name,
     vetshack_jobs.name,
-    vetshack_events.name
+    vetshack_events.name,
+    vetshack_sos.name
   ]);
