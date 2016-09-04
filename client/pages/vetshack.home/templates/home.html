@@ -1,66 +1,85 @@
-<div class="">
-  <vetshack-carousel></vetshack-carousel>
-</div>
+<div ng-if="vm.loaded">
+  <div class="">
+    <vetshack-carousel image="vm.pictures.imageUrls"></vetshack-carousel>
+  </div>
 
-<div class="container home">
-  <div class="container-fluid mentorTileContainer">
-    <h1>Connect with a mentor</h1>
+  <div class="container home">
+    <div class="container-fluid mentorTileContainer">
+      <h1>Connect with a mentor</h1>
 
+      <div class="row">
+        <div class="container col-xs-4" ng-repeat="mentor in vm.mentorList">
+          <div class="mentorTile">
+            <h4>{{mentor.title}}</h4>
+            <h6>{{mentor.text}}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <md-content class="container-fluid mentorButtonContainer">
+        <section layout="row" layout-align="space-around center" layout-wrap>
+          <md-button class="md-raised md-primary mentorButton" ui-sref="mentors">Find a mentor</md-button>
+          <md-button class="md-raised md-primary mentorButton" ui-sref="signup">Be a mentor</md-button>
+        </section>
+      </md-content>
+    </div>
+  </div>
+
+  <div class="homeStaticImage">
+    <img ng-src="{{vm.pictures.static[0]}}" />
+  </div>
+
+  <div class="container giveBackContainer">
+    <md-content class="giveBackItemContainer" layout="column" layout-align="center center" layout-wrap>
+      <section>
+        <div class="giveBackItem">
+          <h4>Veterans giving back.</h4>
+        </div>
+      </section>
+
+      <section layout="row" layout-align="space-around center" layout-wrap>
+        <div class="giveBackItem">
+          <md-button class="md-raised md-primary mentorButton">I want to give back</md-button>
+          <md-button class="md-raised md-primary mentorButton">View veteran volunteers</md-button>
+        </div>
+      </section>
+    </md-content>
+  </div>
+
+  <div class="container categories">
     <div class="row">
-      <div class="container col-xs-4" ng-repeat="mentor in vm.mentorList">
-        <div class="mentorTile">
-          <h4>{{mentor.title}}</h4>
-          <h6>{{mentor.text}}</h6>
+      <div class="col-xs-4 categoriesTilesContainer" ng-repeat="categorie in vm.categories">
+        <div class="categoriesTiles">
+          <h4>{{categorie}}</h4>
+          <md-content>
+            <section layout="column" layout-align="space-around center" layout-wrap>
+              <md-button class="md-raised md-primary">View {{categorie}}</md-button>
+              <md-button class="md-raised md-primary">Post {{categorie}}</md-button>
+            </section>
+          </md-content>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="container-fluid">
-    <md-content class="container-fluid mentorButtonContainer">
-      <section layout="row" layout-align="space-around center" layout-wrap>
-        <md-button class="md-raised md-primary mentorButton">Find a mentor</md-button>
-        <md-button class="md-raised md-primary mentorButton">Be a mentor</md-button>
-      </section>
-    </md-content>
-  </div>
-</div>
+  <div class="container organizationContainer">
+    <div class="organizationContainerChild">
+      <md-content class="organizationItem" layout="column" layout-align="center center" layout-wrap>
+        <section layout="row" layout-align="center center" layout-wrap>
+          <div class="">
+            <h4>Are you an organization serving the veteran community? Join our Vetifieds network.</h4>
+          </div>
+        </section>
 
-<div class="homeStaticImage">
-  <img ng-src="http://www.backdrops.net/images/34%20Mottled%20Blue%208'%20x%2010'.jpg" />
-</div>
-
-
-<div class="container giveBackContainer">
-  <md-content layout="row" layout-align="center center" layout-wrap>
-    <section layout="row" layout-align="center center" layout-wrap>
-      <div class="giveBackItem">
-        <h4>Veterans giving back.</h4>
-        <h4>Lorem ipsum dolor sit amet.</h4>
-      </div>
-    </section>
-
-    <section layout="row" layout-align="end center" layout-wrap>
-      <div class="giveBackItem">
-        <md-button class="md-raised md-primary mentorButton">I want to give back</md-button>
-      </div>
-    </section>
-  </md-content>
-</div>
-
-
-<div class="container categories">
-  <div class="row">
-    <div class="col-xs-4 categoriesTilesContainer" ng-repeat="categorie in vm.categories">
-      <div class="categoriesTiles">
-        <h4>{{categorie}}</h4>
-        <md-content>
-          <section layout="column" layout-align="space-around center" layout-wrap>
-            <md-button class="md-raised md-primary">View {{categorie}}</md-button>
-            <md-button class="md-raised md-primary">Post {{categorie}}</md-button>
-          </section>
-        </md-content>
-      </div>
+        <section layout="row" layout-align="space-around center" layout-wrap>
+          <div class="organizationItem">
+            <md-button class="md-raised md-primary mentorButton">View Organizations</md-button>
+            <md-button class="md-raised md-primary mentorButton">Register Organization</md-button>
+          </div>
+        </section>
+      </md-content>
     </div>
   </div>
 </div>

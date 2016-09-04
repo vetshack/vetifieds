@@ -12,8 +12,22 @@ const Home = function($http, $q) {
     });
   };
 
+  const getPic = () => {
+    return $http({
+      method: 'GET',
+      url: 'api/images'
+    })
+    .then((response) => {
+      return response.data.data[0];
+    })
+    .catch((err) => {
+      console.log('Error from attempted login: ', err);
+    });
+  };
+
   let service = {
-    getCata: getCata
+    getCata: getCata,
+    getPic: getPic
   };
 
   return service;

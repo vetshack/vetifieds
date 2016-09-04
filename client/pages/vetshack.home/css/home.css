@@ -1,3 +1,13 @@
+.md-primary {
+  background-color: #232323 !important;
+  color: #91CC32 !important;
+}
+
+.md-primary:not([disabled]):hover {
+  background-color: rgba(107, 103, 91, 0.96);
+  color: white;
+}
+
 .home h1 {
   text-align: center;
 }
@@ -8,17 +18,18 @@
 }
 
 .homeStaticImage img {
-  height: 35vh;
   width: 100%;
+  height: auto;
 }
 
-.carouselImgContainer {
-  height: 100%;
+.carouselImg {
+  width: 100%;
+  height: auto;
 }
 
 .mentorTile {
-  padding: 45px 15px 45px 15px;
-  background-color: pink;
+  padding: 65px 15px 65px 15px;
+  background-color: #DEE4E0;
   text-align: center;
 }
 
@@ -38,25 +49,45 @@
 }
 
 .giveBackItem {
+  background-color: #DEE4E0;
   padding-left: 60px;
   padding-right: 60px;
 }
 
 .giveBackContainer {
-  border: 2px solid black;
+  background-color: #DEE4E0;
   padding-top: 25px;
   padding-bottom: 25px;
 }
 
+.giveBackItemContainer {
+  background-color: #DEE4E0;
+}
+
 .categories {
-  padding: 25px 0 25px 0;
+  padding: 25px 0 0 0;
 }
 
 .categoriesTiles {
-  padding: 15px;
-  border: 2px solid black;
+  padding: 30px;
+  border: 1px solid #DEE4E0;
 }
 
 .categoriesTilesContainer {
   padding-bottom: 25px;
+}
+
+.organizationContainer {
+  padding: 0 0 25px 0;
+}
+
+.organizationContainerChild {
+  background-color: #DEE4E0;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.organizationItem {
+  background-color: #DEE4E0;
 }
