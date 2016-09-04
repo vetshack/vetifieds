@@ -1,5 +1,3 @@
-// var authHelper = require('./helpers/authHelper');
-
 module.exports = function (app, routes) {
   return {
     init: function() {

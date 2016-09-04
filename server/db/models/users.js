@@ -17,8 +17,8 @@ let UserSchema = mongoose.Schema({
 });
 
 UserSchema.methods.comparePasswords = function (attempt) {
-  let defer = Q.defer();
-  let savedPassword = this.password;
+  let defer = Q.defer(),
+      savedPassword = this.password;
   bcrypt.compare(attempt, savedPassword, function (err, isMatch) {
     if (err) defer.reject(err);
     else defer.resolve(isMatch);

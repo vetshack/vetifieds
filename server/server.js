@@ -1,4 +1,3 @@
-
 let express = require('express'),
   bodyParser = require('body-parser'),
   cors = require('cors'),
@@ -23,6 +22,7 @@ app.set("env", process.env.NODE_ENV || "development");
 app.set("host", process.env.HOST || "0.0.0.0");
 app.set("port", process.env.PORT || 1337);
 app.use(expressValidator());
+app.use(cookieParser());
 
 app.use(logger('dev'));
 
