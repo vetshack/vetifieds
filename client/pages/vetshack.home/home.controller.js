@@ -141,14 +141,10 @@ const HomeController = function(Home, $mdDialog, $mdMedia, SOS, $cookies) {
     };
 
     $scope.answerd = function(answer) {
-      console.log('inside distress all cap')
-      SOS.sendDistressMsg(vm.message, $cookies.get('email'), $cookies.get('location'))
+      console.log('inside distress all cap', answer, SOS)
+      SOS.sendDistressMsg(answer, $cookies.get('email'), $cookies.get('location'))
         .then(function(response) {
-          console.log(response);
-          if (response.status === 400) {
-            $mdDialog.hide(answer);
-            vm.denySupport();
-          }
+          $mdDialog.hide(answer);
         });
     };
   }

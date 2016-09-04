@@ -18,7 +18,7 @@ module.exports = (function() {
   router.get('/:location/:email', function(req, res) {
 
     //if (!authHelper.isAuthenticated()) return res.status(401).send('User unauthorized');
-    console.log('params:', req.params.location, req.params.userid, req.query.message)
+    console.log('params:', req.params.location, req.params.email, req.query.message)
     let getSupports = Q.nbind(User.find, User);
 
     getSupports({
@@ -26,19 +26,21 @@ module.exports = (function() {
       isSupport: true
     })
       .then(function(response) {
-        res.json({ data: response });
+        // res.json({ data: response });
         async.eachSeries(response, function(user, callback) {
          let data = {
             from: req.params.email,
             to: user.email,
             subject: user.fullname + ' has sent a distress!',
-            text: 'If you have time, I would love to talk to you!'
+            text: req.query.message
           };
 
           mailgun.messages().send(data, function (error, body) {
             console.log('sent message', body);
             callback();
           });
+        }, function() {
+          res.send( {status: 200} );
         })
       })
       .fail(function (error) {
