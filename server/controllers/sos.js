@@ -4,7 +4,7 @@ let ControllerPrototype = require('./controller.prototype.js'),
   db = require('../db/db');
   Q = require('q'),
   mailgun = require('mailgun-js')({apiKey: process.env.MAILGUN_KEY, domain: process.env.MAILGUN_DOMAIN}),
-  async = require('async')
+  async = require('async');
 
 require('dotenv').config();
 
