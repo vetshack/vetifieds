@@ -7,14 +7,9 @@ const Mentors = function($http, $q, data) {
         method: 'GET',
         url: 'api/mentors/' + location
       })
-      .then((resp, err) => {
-        if(err) {
-          console.log(err);
-          return err;
-        } else {
+      .then((resp) => {
           data = resp.data;
           return data;
-        }
       })
       .catch((err) => {
         console.log("Error in fetchLocalMentors in mentors service");

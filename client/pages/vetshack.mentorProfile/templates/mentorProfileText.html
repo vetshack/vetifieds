@@ -1,6 +1,6 @@
-<div layout="column" layout-align="center center" layout-padding>
+<div layout="column" layout-align="center center" layout-padding >
   <div class="mentor-title" layout="row" layout-align="space-between center">
-    <h3 class="mentor-name">Mentor Name</h3>
+    <h3 class="mentor-name">{{vm.mentor.fullname}}</h3>
     <a class="mentors-nav" ui-sref="mentors">
     Back to mentor page
     </a>
@@ -13,9 +13,10 @@
           <span class="md-headline card-title">About</span>
         </md-card-title-text>
         <md-card-content>
-          <p>
-            Lorem ipsum dolor.
-          </p>
+          <span>{{vm.mentor.type}}</span>
+          <span>{{vm.mentor.industry}}</span>
+          <span>{{vm.mentor.location}}</span>
+          <span>{{vm.mentor.email}}</span>
         </md-card-content>
       </md-card>
 

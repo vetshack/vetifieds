@@ -24,7 +24,7 @@ function config($stateProvider, $urlRouterProvider, $httpProvider) {
       controller: 'MentorsController as vm'
     })
     .state('mentorProfile', {
-      url: '/mentorprofile',
+      url: '/mentorprofile/:mentorId',
       auth: false,
       templateUrl: '../pages/vetshack.mentorProfile/templates/mentorProfile.html',
       controller: 'MentorProfileController as vm'
