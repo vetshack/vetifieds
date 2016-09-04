@@ -35,9 +35,16 @@ module.exports = (function() {
         // console.log('after push', response);
         res.send({ success: true });
       })
-    } else {
+    } else if (req.body.type === "carousel") {
       postIcon({},
         {$push: {"imageUrls": req.body.url}}
+      )
+        .then(function(response) {
+          res.send({ success: true });
+        })
+    } else {
+      postIcon({},
+        {$push: {"static": req.body.url}}
       )
         .then(function(response) {
           res.send({ success: true });
