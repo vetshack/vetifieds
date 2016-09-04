@@ -8,10 +8,6 @@
   color: white;
 }
 
-.homeContainer {
-  margin-top: 65px;
-}
-
 .home {
   padding-left: 0;
   padding-right: 0;
@@ -118,7 +114,6 @@
 
 .nav {
   background-color: #232323 !important;
-  height: 57px;
   font-size: 20px;
 }
 
