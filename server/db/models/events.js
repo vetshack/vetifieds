@@ -1,6 +1,6 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-let EventSchema = mongoose.Schema({
+const EventSchema = mongoose.Schema({
   eventname: String,
   location: String,
   poc: String,

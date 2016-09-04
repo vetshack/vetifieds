@@ -1,6 +1,6 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-let GroupSchema = mongoose.Schema({
+const GroupSchema = mongoose.Schema({
   groupname: String,
   location: String,
   phone: String,

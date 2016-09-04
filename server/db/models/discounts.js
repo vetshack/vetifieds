@@ -1,6 +1,6 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-let DiscountSchema = mongoose.Schema({
+const DiscountSchema = mongoose.Schema({
   location: String,
   type: String,
   description: String,

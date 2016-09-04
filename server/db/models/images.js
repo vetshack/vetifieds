@@ -1,6 +1,6 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-let ImageSchema = mongoose.Schema({
+const ImageSchema = mongoose.Schema({
   url: [String]
 });
 
