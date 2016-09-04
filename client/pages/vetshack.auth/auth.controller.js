@@ -1,10 +1,13 @@
 const AuthController = function(Auth, $state, $cookies) {
   let vm = this;
-  
+
+  vm.loggedIn = $cookies.get('jwt') || false;
+
   vm.signin = function(username, password) {
     Auth.login(username, password)
     .then((response) => {
       $cookies.put('jwt', response.data.token);
+      vm.loggedIn = true;
       $state.go('home');
     });
   };
@@ -23,7 +26,9 @@ const AuthController = function(Auth, $state, $cookies) {
       return;
     }
 
-    Auth.logout(jwt);
+    $cookies.remove('jwt');
+    vm.loggedIn = false;
+    $state.go('home');
   }
 
   vm.state = $state.current.name;

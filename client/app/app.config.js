@@ -8,6 +8,7 @@ function config($stateProvider, $urlRouterProvider, $httpProvider) {
     .state('home', {
       url: '/home',
       auth: false,
+      cache: false,
       templateUrl: '../pages/vetshack.home/templates/home.html',
       controller: 'HomeController as vm'
     })
