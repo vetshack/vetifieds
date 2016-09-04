@@ -1,4 +1,4 @@
-const Auth = function($http, $q) {
+const Auth = function($http, $q, $rootScope, $cookies) {
   const login = (username, password) => {
     return $http({
       method: 'POST',
@@ -36,14 +36,37 @@ const Auth = function($http, $q) {
     });
   };
 
+  const parseJwt = (jwt) => {
+    const base64Url = jwt.split('.')[1];
+    const base64 = base64Url.replace('-', '+').replace('_', '/');
+    return JSON.parse(window.atob(base64));
+  };
+
+  const checkAuth = (jwt) => {
+    if(jwt) {
+      const params = parseJwt(jwt);
+      return Math.round(new Date().getTime() / 1000) <= params.exp;
+    } else {
+      console.log('No jwt found');
+      return false;
+    }
+  };
+
+  const logout = (jwt) => {
+    $cookies.remove('jwt');
+    $state.go('home');
+  };
+
   const service = {
     login: login,
-    signup: signup
+    signup: signup,
+    checkAuth: checkAuth,
+    logout: logout
   };
 
   return service;
 };
 
-Auth.$inject = ['$http', '$q'];
+Auth.$inject = ['$http', '$q', '$cookies', '$rootScope'];
 
 export default Auth;

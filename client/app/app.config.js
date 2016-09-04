@@ -13,7 +13,7 @@ function config($stateProvider, $urlRouterProvider, $httpProvider) {
     })
     .state('login', {
       url: '/login',
-      auth: false,
+      auth: true,
       templateUrl: '../pages/vetshack.auth/templates/auth.html',
       controller: 'AuthController as vm'
     })
@@ -31,7 +31,7 @@ function config($stateProvider, $urlRouterProvider, $httpProvider) {
     })
     .state('signup', {
       url: '/signup',
-      auth: false,
+      auth: true,
       templateUrl: '../pages/vetshack.auth/templates/auth.html',
       controller: 'AuthController as vm'
     })
